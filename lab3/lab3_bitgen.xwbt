@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\hlocal\DAS\lab3\lab3.ncd
+OUTFILE=C:\hlocal\DAS\lab3\lab3.bit
+FAMILY=Spartan3
+PART=xc3s1000-5ft256
+WORKINGDIR=C:\hlocal\DAS\lab3
+LICENSE=WebPack
+USER_INFO=211104958_0_0_850

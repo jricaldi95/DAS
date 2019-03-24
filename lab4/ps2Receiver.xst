@@ -1,0 +1,5 @@
+set -tmpdir "C:/hlocal/DAS/lab4/xst/projnav.tmp"
+set -xsthdpdir "C:/hlocal/DAS/lab4/xst"
+elaborate
+-ifn ps2Receiver.prj
+-ifmt mixed

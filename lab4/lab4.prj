@@ -1,0 +1,6 @@
+vhdl work "../common/synchronizer.vhd"
+vhdl work "../common/edgedetector.vhd"
+vhdl work "../common/common.vhd"
+vhdl work "../common/ps2receiver.vhd"
+vhdl work "../common/bin2segs.vhd"
+vhdl work "lab4.vhd"

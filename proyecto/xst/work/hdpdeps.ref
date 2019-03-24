@@ -1,0 +1,61 @@
+V3 54
+FL C:/Users/xavi/Desktop/DAS/common/bin2segs.vhd 2018/03/15.18:38:22 P.20131013
+EN work/bin2segs 1553435789 FL C:/Users/xavi/Desktop/DAS/common/bin2segs.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/bin2segs/syn 1553435790 \
+      FL C:/Users/xavi/Desktop/DAS/common/bin2segs.vhd EN work/bin2segs 1553435789
+FL C:/Users/xavi/Desktop/DAS/common/common.vhd 2018/06/12.17:09:14 P.20131013
+PH work/common 1553435783 FL C:/Users/xavi/Desktop/DAS/common/common.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 CD bin2segs \
+      CD debouncer CD edgeDetector CD synchronizer CD frequencySynthesizer \
+      CD ps2Receiver CD fifo CD rs232Receiver CD rs232Transmitter CD vgaInterface \
+      CD vgaTxtInterface CD ram1 CD ram2 CD ram3
+PB work/common 1553435784 \
+      FL C:/Users/xavi/Desktop/DAS/common/common.vhd PH work/common 1553435783
+FL C:/Users/xavi/Desktop/DAS/common/edgedetector.vhd 2018/02/23.12:15:40 P.20131013
+EN work/edgeDetector 1553435787 \
+      FL C:/Users/xavi/Desktop/DAS/common/edgedetector.vhd PB ieee/std_logic_1164 1381692176
+AR work/edgeDetector/syn 1553435788 \
+      FL C:/Users/xavi/Desktop/DAS/common/edgedetector.vhd EN work/edgeDetector 1553435787
+FL C:/Users/xavi/Desktop/DAS/common/ps2receiver.vhd 2018/03/13.14:59:06 P.20131013
+EN work/ps2Receiver 1553435791 \
+      FL C:/Users/xavi/Desktop/DAS/common/ps2receiver.vhd PB ieee/std_logic_1164 1381692176
+AR work/ps2Receiver/syn 1553435792 \
+      FL C:/Users/xavi/Desktop/DAS/common/ps2receiver.vhd EN work/ps2Receiver 1553435791 \
+      CP synchronizer CP edgeDetector CP parityOK CP lastBit PB work/common 1553435784
+FL C:/Users/xavi/Desktop/DAS/common/ram1.vhd 2019/03/24.01:38:35 P.20131013
+EN work/ram1 1553435795 FL C:/Users/xavi/Desktop/DAS/common/ram1.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/ram1/syn 1553435796 \
+      FL C:/Users/xavi/Desktop/DAS/common/ram1.vhd EN work/ram1 1553435795 \
+      PB work/common 1553435784
+FL C:/Users/xavi/Desktop/DAS/common/ram2.vhd 2019/03/24.01:38:35 P.20131013
+EN work/ram2 1553435797 FL C:/Users/xavi/Desktop/DAS/common/ram2.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/ram2/syn 1553435798 \
+      FL C:/Users/xavi/Desktop/DAS/common/ram2.vhd EN work/ram2 1553435797 \
+      PB work/common 1553435784
+FL C:/Users/xavi/Desktop/DAS/common/ram3.vhd 2019/03/24.01:38:35 P.20131013
+EN work/ram3 1553435799 FL C:/Users/xavi/Desktop/DAS/common/ram3.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/ram3/syn 1553435800 \
+      FL C:/Users/xavi/Desktop/DAS/common/ram3.vhd EN work/ram3 1553435799 \
+      PB work/common 1553435784
+FL C:/Users/xavi/Desktop/DAS/common/synchronizer.vhd 2018/02/23.12:15:24 P.20131013
+EN work/synchronizer 1553435785 \
+      FL C:/Users/xavi/Desktop/DAS/common/synchronizer.vhd PB ieee/std_logic_1164 1381692176
+AR work/synchronizer/syn 1553435786 \
+      FL C:/Users/xavi/Desktop/DAS/common/synchronizer.vhd EN work/synchronizer 1553435785
+FL C:/Users/xavi/Desktop/DAS/common/vgaInterface.vhd 2018/05/25.19:47:14 P.20131013
+EN work/vgaInterface 1553435793 \
+      FL C:/Users/xavi/Desktop/DAS/common/vgaInterface.vhd PB ieee/std_logic_1164 1381692176
+AR work/vgaInterface/syn 1553435794 \
+      FL C:/Users/xavi/Desktop/DAS/common/vgaInterface.vhd EN work/vgaInterface 1553435793 \
+      PB ieee/NUMERIC_STD 1381692181
+FL C:/Users/xavi/Desktop/DAS/proyecto/proyecto.vhd 2019/03/24.14:56:06 P.20131013
+EN work/proyecto 1553435801 FL C:/Users/xavi/Desktop/DAS/proyecto/proyecto.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/proyecto/syn 1553435802 \
+      FL C:/Users/xavi/Desktop/DAS/proyecto/proyecto.vhd EN work/proyecto 1553435801 \
+      PB ieee/NUMERIC_STD 1381692181 CP synchronizer CP bin2segs CP ps2Receiver \
+      CP vgaInterface CP ram1 CP ram2 CP ram3 PB work/common 1553435784

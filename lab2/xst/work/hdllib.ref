@@ -1,0 +1,14 @@
+EN modcounter NULL C:/hlocal/DAS/lab2/modcounter.vhd sub00/vhpl08 1519924850
+EN edgedetector NULL C:/hlocal/DAS/common/edgedetector.vhd sub00/vhpl06 1519924848
+PB common common C:/hlocal/DAS/common/common.vhd sub00/vhpl01 1519924843
+EN bin2segs NULL C:/hlocal/DAS/common/bin2segs.vhd sub00/vhpl10 1519924852
+AR debouncer syn C:/hlocal/DAS/common/debouncer.vhd sub00/vhpl05 1519924847
+EN lab2 NULL C:/hlocal/DAS/lab2/lab2.vhd sub00/vhpl12 1519924854
+AR bin2segs syn C:/hlocal/DAS/common/bin2segs.vhd sub00/vhpl11 1519924853
+AR synchronizer syn C:/hlocal/DAS/common/synchronizer.vhd sub00/vhpl03 1519924845
+AR modcounter syn C:/hlocal/DAS/lab2/modcounter.vhd sub00/vhpl09 1519924851
+PH common NULL C:/hlocal/DAS/common/common.vhd sub00/vhpl00 1519924842
+EN synchronizer NULL C:/hlocal/DAS/common/synchronizer.vhd sub00/vhpl02 1519924844
+EN debouncer NULL C:/hlocal/DAS/common/debouncer.vhd sub00/vhpl04 1519924846
+AR edgedetector syn C:/hlocal/DAS/common/edgedetector.vhd sub00/vhpl07 1519924849
+AR lab2 syn C:/hlocal/DAS/lab2/lab2.vhd sub00/vhpl13 1519924855

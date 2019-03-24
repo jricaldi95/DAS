@@ -1,0 +1,14 @@
+AR lab7 syn C:/hlocal/DAS/lab7/lab7.vhd sub00/vhpl13 1526307536
+EN edgedetector NULL C:/hlocal/DAS/common/edgedetector.vhd sub00/vhpl07 1526307529
+PB common common C:/hlocal/DAS/common/common.vhd sub00/vhpl01 1526307524
+AR ps2receiver syn C:/hlocal/DAS/common/ps2receiver.vhd sub00/vhpl10 1526307532
+EN vgatxtinterface NULL C:/hlocal/DAS/lab7/vgaTxtInterface.vhd sub00/vhpl02 1526307533
+EN lab7 NULL C:/hlocal/DAS/lab7/lab7.vhd sub00/vhpl12 1526307535
+AR synchronizer syn C:/hlocal/DAS/common/synchronizer.vhd sub00/vhpl06 1526307528
+EN ps2receiver NULL C:/hlocal/DAS/common/ps2receiver.vhd sub00/vhpl09 1526307531
+PH common NULL C:/hlocal/DAS/common/common.vhd sub00/vhpl00 1526307523
+EN synchronizer NULL C:/hlocal/DAS/common/synchronizer.vhd sub00/vhpl05 1526307527
+AR vgatxtinterface syn C:/hlocal/DAS/lab7/vgaTxtInterface.vhd sub00/vhpl11 1526307534
+EN vgainterface NULL C:/hlocal/DAS/common/vgaInterface.vhd sub00/vhpl03 1526307525
+AR vgainterface syn C:/hlocal/DAS/common/vgaInterface.vhd sub00/vhpl04 1526307526
+AR edgedetector syn C:/hlocal/DAS/common/edgedetector.vhd sub00/vhpl08 1526307530

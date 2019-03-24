@@ -1,0 +1,40 @@
+V3 34
+FL C:/hlocal/DAS/common/bin2segs.vhd 2018/02/15.18:47:55 P.20131013
+EN work/bin2segs 1520013332 FL C:/hlocal/DAS/common/bin2segs.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/bin2segs/syn 1520013333 \
+      FL C:/hlocal/DAS/common/bin2segs.vhd EN work/bin2segs 1520013332
+FL C:/hlocal/DAS/common/common.vhd 2018/03/01.18:32:18 P.20131013
+PH work/common 1520013322 FL C:/hlocal/DAS/common/common.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 CD bin2segs \
+      CD debouncer CD edgeDetector CD synchronizer CD frequencySynthesizer
+PB work/common 1520013323 \
+      FL C:/hlocal/DAS/common/common.vhd PH work/common 1520013322
+FL C:/hlocal/DAS/common/debouncer.vhd 2018/02/23.12:15:52 P.20131013
+EN work/debouncer 1520013328 FL C:/hlocal/DAS/common/debouncer.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/debouncer/syn 1520013329 \
+      FL C:/hlocal/DAS/common/debouncer.vhd EN work/debouncer 1520013328
+FL C:/hlocal/DAS/common/edgedetector.vhd 2018/02/23.12:15:39 P.20131013
+EN work/edgeDetector 1520013330 FL C:/hlocal/DAS/common/edgedetector.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/edgeDetector/syn 1520013331 \
+      FL C:/hlocal/DAS/common/edgedetector.vhd EN work/edgeDetector 1520013330
+FL C:/hlocal/DAS/common/frequencysinthesizer.vhd 2018/03/01.18:15:15 P.20131013
+EN work/frequencySynthesizer 1520013326 \
+      FL C:/hlocal/DAS/common/frequencysinthesizer.vhd PB ieee/std_logic_1164 1381692176
+AR work/frequencySynthesizer/syn 1520013327 \
+      FL C:/hlocal/DAS/common/frequencysinthesizer.vhd \
+      EN work/frequencySynthesizer 1520013326 LB unisim PH unisim/VCOMPONENTS 1381692182 \
+      CP DCM
+FL C:/hlocal/DAS/common/synchronizer.vhd 2018/02/23.12:15:22 P.20131013
+EN work/synchronizer 1520013324 FL C:/hlocal/DAS/common/synchronizer.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/synchronizer/syn 1520013325 \
+      FL C:/hlocal/DAS/common/synchronizer.vhd EN work/synchronizer 1520013324
+FL C:/hlocal/DAS/lab3/lab3.vhd 2018/03/02.18:54:53 P.20131013
+EN work/lab3 1520013334 FL C:/hlocal/DAS/lab3/lab3.vhd PB ieee/std_logic_1164 1381692176
+AR work/lab3/syn 1520013335 \
+      FL C:/hlocal/DAS/lab3/lab3.vhd EN work/lab3 1520013334 PB work/common 1520013323 \
+      CP synchronizer CP frequencySynthesizer CP debouncer CP edgeDetector CP eq \
+      CP bin2segs

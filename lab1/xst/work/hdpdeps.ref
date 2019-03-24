@@ -1,0 +1,16 @@
+V3 12
+FL C:/hlocal/DAS/common/bin2segs.vhd 2018/02/15.18:47:55 P.20131013
+EN work/bin2segs 1519379806 FL C:/hlocal/DAS/common/bin2segs.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/bin2segs/syn 1519379807 \
+      FL C:/hlocal/DAS/common/bin2segs.vhd EN work/bin2segs 1519379806
+FL C:/hlocal/DAS/common/common.vhd 2018/02/23.10:53:47 P.20131013
+PH work/common 1519379804 FL C:/hlocal/DAS/common/common.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 CD bin2segs
+PB work/common 1519379805 \
+      FL C:/hlocal/DAS/common/common.vhd PH work/common 1519379804
+FL C:/hlocal/DAS/lab1/lab1.vhd 2018/02/23.10:56:39 P.20131013
+EN work/lab1 1519379808 FL C:/hlocal/DAS/lab1/lab1.vhd PB ieee/std_logic_1164 1381692176
+AR work/lab1/syn 1519379809 \
+      FL C:/hlocal/DAS/lab1/lab1.vhd EN work/lab1 1519379808 PB ieee/NUMERIC_STD 1381692181 \
+      PB work/common 1519379805 CP with CP bin2segs

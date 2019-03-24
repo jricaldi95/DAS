@@ -1,0 +1,9 @@
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab7/lab7.xst" -ofn "C:/hlocal/DAS/lab7/lab7.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab7.ucf -p xc3sd1800a-fg676-4 lab7.ngc lab7.ngd  
+map -intstyle ise -p xc3sd1800a-fg676-4 -cm area -ir off -pr off -c 100 -o lab7_map.ncd lab7.ngd lab7.pcf 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab7/lab7.xst" -ofn "C:/hlocal/DAS/lab7/lab7.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab7.ucf -p xc3s1000-ft256-5 lab7.ngc lab7.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab7_map.ncd lab7.ngd lab7.pcf 
+par -w -intstyle ise -ol high -t 1 lab7_map.ncd lab7.ncd lab7.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab7.twx lab7.ncd -o lab7.twr lab7.pcf -ucf lab7.ucf 
+bitgen -intstyle ise -f lab7.ut lab7.ncd 

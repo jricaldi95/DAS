@@ -1,0 +1,5 @@
+set -tmpdir "C:/hlocal/DAS/lab2/xst/projnav.tmp"
+set -xsthdpdir "C:/hlocal/DAS/lab2/xst"
+elaborate
+-ifn modCounter.prj
+-ifmt mixed

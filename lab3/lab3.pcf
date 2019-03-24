@@ -1,0 +1,109 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Mar 02 18:55:54 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "switches_n<0>" LOCATE = SITE "F15" LEVEL 1;
+COMP "switches_n<1>" LOCATE = SITE "K16" LEVEL 1;
+COMP "rstPb_n" LOCATE = SITE "E11" LEVEL 1;
+COMP "switches_n<2>" LOCATE = SITE "K15" LEVEL 1;
+COMP "switches_n<3>" LOCATE = SITE "G2" LEVEL 1;
+COMP "switches_n<4>" LOCATE = SITE "H3" LEVEL 1;
+COMP "switches_n<5>" LOCATE = SITE "H1" LEVEL 1;
+COMP "leds<0>" LOCATE = SITE "L5" LEVEL 1;
+COMP "switches_n<6>" LOCATE = SITE "J1" LEVEL 1;
+COMP "leds<1>" LOCATE = SITE "N2" LEVEL 1;
+COMP "switches_n<7>" LOCATE = SITE "P12" LEVEL 1;
+COMP "leds<2>" LOCATE = SITE "M3" LEVEL 1;
+COMP "leds<3>" LOCATE = SITE "N1" LEVEL 1;
+COMP "leds<4>" LOCATE = SITE "T13" LEVEL 1;
+COMP "leds<5>" LOCATE = SITE "L15" LEVEL 1;
+COMP "leds<6>" LOCATE = SITE "J13" LEVEL 1;
+COMP "upSegs<0>" LOCATE = SITE "R7" LEVEL 1;
+COMP "leds<7>" LOCATE = SITE "H15" LEVEL 1;
+COMP "upSegs<1>" LOCATE = SITE "T7" LEVEL 1;
+COMP "upSegs<2>" LOCATE = SITE "N6" LEVEL 1;
+COMP "upSegs<3>" LOCATE = SITE "M6" LEVEL 1;
+COMP "upSegs<4>" LOCATE = SITE "M11" LEVEL 1;
+COMP "upSegs<5>" LOCATE = SITE "P10" LEVEL 1;
+COMP "upSegs<6>" LOCATE = SITE "R10" LEVEL 1;
+COMP "upSegs<7>" LOCATE = SITE "N11" LEVEL 1;
+COMP "osc" LOCATE = SITE "P8" LEVEL 1;
+COMP "enter_n" LOCATE = SITE "H4" LEVEL 1;
+TIMEGRP clk = BEL "code_0" BEL "code_1" BEL "code_2" BEL "code_3" BEL "code_4"
+        BEL "code_5" BEL "code_6" BEL "code_7" BEL "resetSyncronizer/aux_1"
+        BEL "resetSyncronizer/aux_0" BEL
+        "switchesSynchronizer[0].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[0].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[1].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[1].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[2].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[2].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[3].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[3].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[4].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[4].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[5].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[5].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[6].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[6].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[7].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[7].switchsynchronizer/aux_0" BEL
+        "enterSynchronizer/aux_1" BEL "enterSynchronizer/aux_0" BEL
+        "enterEdgeDetector/aux2" BEL "enterEdgeDetector/aux1" BEL
+        "enterDebouncer/count_0" BEL "enterDebouncer/count_1" BEL
+        "enterDebouncer/count_2" BEL "enterDebouncer/count_3" BEL
+        "enterDebouncer/count_4" BEL "enterDebouncer/count_5" BEL
+        "enterDebouncer/count_6" BEL "enterDebouncer/count_7" BEL
+        "enterDebouncer/count_8" BEL "enterDebouncer/count_9" BEL
+        "enterDebouncer/count_10" BEL "enterDebouncer/count_11" BEL
+        "enterDebouncer/count_12" BEL "enterDebouncer/count_13" BEL
+        "enterDebouncer/count_14" BEL "enterDebouncer/count_15" BEL
+        "enterDebouncer/count_16" BEL "enterDebouncer/count_17" BEL
+        "enterDebouncer/count_18" BEL "enterDebouncer/count_19" BEL
+        "enterDebouncer/count_20" BEL "state_FSM_FFd3" BEL "state_FSM_FFd1"
+        BEL "state_FSM_FFd2" BEL "enterDebouncer/state_FSM_FFd2" BEL
+        "enterDebouncer/state_FSM_FFd1" BEL "enterDebouncer/state_FSM_FFd2_1";
+TIMEGRP clk1 = BEL "code_0" BEL "code_1" BEL "code_2" BEL "code_3" BEL
+        "code_4" BEL "code_5" BEL "code_6" BEL "code_7" BEL
+        "resetSyncronizer/aux_1" BEL "resetSyncronizer/aux_0" BEL
+        "switchesSynchronizer[0].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[0].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[1].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[1].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[2].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[2].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[3].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[3].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[4].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[4].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[5].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[5].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[6].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[6].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[7].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[7].switchsynchronizer/aux_0" BEL
+        "enterSynchronizer/aux_1" BEL "enterSynchronizer/aux_0" BEL
+        "enterEdgeDetector/aux2" BEL "enterEdgeDetector/aux1" BEL
+        "enterDebouncer/count_0" BEL "enterDebouncer/count_1" BEL
+        "enterDebouncer/count_2" BEL "enterDebouncer/count_3" BEL
+        "enterDebouncer/count_4" BEL "enterDebouncer/count_5" BEL
+        "enterDebouncer/count_6" BEL "enterDebouncer/count_7" BEL
+        "enterDebouncer/count_8" BEL "enterDebouncer/count_9" BEL
+        "enterDebouncer/count_10" BEL "enterDebouncer/count_11" BEL
+        "enterDebouncer/count_12" BEL "enterDebouncer/count_13" BEL
+        "enterDebouncer/count_14" BEL "enterDebouncer/count_15" BEL
+        "enterDebouncer/count_16" BEL "enterDebouncer/count_17" BEL
+        "enterDebouncer/count_18" BEL "enterDebouncer/count_19" BEL
+        "enterDebouncer/count_20" BEL "state_FSM_FFd3" BEL "state_FSM_FFd1"
+        BEL "state_FSM_FFd2" BEL "enterDebouncer/state_FSM_FFd2" BEL
+        "enterDebouncer/state_FSM_FFd1" BEL "enterDebouncer/state_FSM_FFd2_1"
+        BEL "clk_BUFG.GCLKMUX" BEL "clk_BUFG";
+PIN clkGenerator/clockManager_pins<2> = BEL "clkGenerator/clockManager"
+        PINNAME CLKIN;
+TIMEGRP osc = PIN "clkGenerator/clockManager_pins<2>";
+TSosc = PERIOD TIMEGRP "osc" 20 ns HIGH 50%;
+TSclk = PERIOD TIMEGRP "clk" 33 ns HIGH 50%;
+TS_clk1 = PERIOD TIMEGRP "clk1" 33.3333333 ns HIGH 50%;
+SCHEMATIC END;
+

@@ -1,0 +1,139 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sun Mar 24 14:56:56 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "osc" LOCATE = SITE "P8" LEVEL 1;
+COMP "switches_n<0>" LOCATE = SITE "J4" LEVEL 1;
+COMP "switches_n<1>" LOCATE = SITE "K2" LEVEL 1;
+COMP "switches_n<2>" LOCATE = SITE "K3" LEVEL 1;
+COMP "switches_n<3>" LOCATE = SITE "K4" LEVEL 1;
+COMP "ps2Data" LOCATE = SITE "E13" LEVEL 1;
+COMP "hSync" LOCATE = SITE "B7" LEVEL 1;
+COMP "vSync" LOCATE = SITE "D8" LEVEL 1;
+COMP "rstPb_n" LOCATE = SITE "E11" LEVEL 1;
+COMP "RGB<0>" LOCATE = SITE "C9" LEVEL 1;
+COMP "RGB<1>" LOCATE = SITE "E7" LEVEL 1;
+COMP "RGB<2>" LOCATE = SITE "D5" LEVEL 1;
+COMP "RGB<3>" LOCATE = SITE "A8" LEVEL 1;
+COMP "RGB<4>" LOCATE = SITE "A5" LEVEL 1;
+COMP "RGB<5>" LOCATE = SITE "C3" LEVEL 1;
+COMP "RGB<6>" LOCATE = SITE "C8" LEVEL 1;
+COMP "RGB<7>" LOCATE = SITE "D6" LEVEL 1;
+COMP "RGB<8>" LOCATE = SITE "B1" LEVEL 1;
+COMP "display<0>" LOCATE = SITE "R7" LEVEL 1;
+COMP "display<1>" LOCATE = SITE "T7" LEVEL 1;
+COMP "display<2>" LOCATE = SITE "N6" LEVEL 1;
+COMP "display<3>" LOCATE = SITE "M6" LEVEL 1;
+COMP "display<4>" LOCATE = SITE "M11" LEVEL 1;
+COMP "display<5>" LOCATE = SITE "P10" LEVEL 1;
+COMP "display<6>" LOCATE = SITE "R10" LEVEL 1;
+COMP "display<7>" LOCATE = SITE "N11" LEVEL 1;
+COMP "ps2Clk" LOCATE = SITE "B16" LEVEL 1;
+NET "osc_BUFGP/IBUFG" BEL "osc_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+PIN level1/Mram_ram1.A_pins<15> = BEL "level1/Mram_ram1.A" PINNAME CLKA;
+PIN level1/Mram_ram1.B_pins<15> = BEL "level1/Mram_ram1.B" PINNAME CLKB;
+PIN level1/Mram_ram2.A_pins<15> = BEL "level1/Mram_ram2.A" PINNAME CLKA;
+PIN level1/Mram_ram2.B_pins<15> = BEL "level1/Mram_ram2.B" PINNAME CLKB;
+PIN level1/Mram_ram5.A_pins<13> = BEL "level1/Mram_ram5.A" PINNAME CLKA;
+PIN level1/Mram_ram5.B_pins<13> = BEL "level1/Mram_ram5.B" PINNAME CLKB;
+PIN level1/Mram_ram3.A_pins<15> = BEL "level1/Mram_ram3.A" PINNAME CLKA;
+PIN level1/Mram_ram3.B_pins<15> = BEL "level1/Mram_ram3.B" PINNAME CLKB;
+PIN level1/Mram_ram4.A_pins<15> = BEL "level1/Mram_ram4.A" PINNAME CLKA;
+PIN level1/Mram_ram4.B_pins<15> = BEL "level1/Mram_ram4.B" PINNAME CLKB;
+PIN level2/Mram_ram1.A_pins<15> = BEL "level2/Mram_ram1.A" PINNAME CLKA;
+PIN level2/Mram_ram1.B_pins<15> = BEL "level2/Mram_ram1.B" PINNAME CLKB;
+PIN level2/Mram_ram4.A_pins<15> = BEL "level2/Mram_ram4.A" PINNAME CLKA;
+PIN level2/Mram_ram4.B_pins<15> = BEL "level2/Mram_ram4.B" PINNAME CLKB;
+PIN level2/Mram_ram2.A_pins<15> = BEL "level2/Mram_ram2.A" PINNAME CLKA;
+PIN level2/Mram_ram2.B_pins<15> = BEL "level2/Mram_ram2.B" PINNAME CLKB;
+PIN level2/Mram_ram3.A_pins<15> = BEL "level2/Mram_ram3.A" PINNAME CLKA;
+PIN level2/Mram_ram3.B_pins<15> = BEL "level2/Mram_ram3.B" PINNAME CLKB;
+PIN level2/Mram_ram5.A_pins<13> = BEL "level2/Mram_ram5.A" PINNAME CLKA;
+PIN level2/Mram_ram5.B_pins<13> = BEL "level2/Mram_ram5.B" PINNAME CLKB;
+PIN level3/Mram_ram3.A_pins<15> = BEL "level3/Mram_ram3.A" PINNAME CLKA;
+PIN level3/Mram_ram3.B_pins<15> = BEL "level3/Mram_ram3.B" PINNAME CLKB;
+PIN level3/Mram_ram1.A_pins<15> = BEL "level3/Mram_ram1.A" PINNAME CLKA;
+PIN level3/Mram_ram1.B_pins<15> = BEL "level3/Mram_ram1.B" PINNAME CLKB;
+PIN level3/Mram_ram2.A_pins<15> = BEL "level3/Mram_ram2.A" PINNAME CLKA;
+PIN level3/Mram_ram2.B_pins<15> = BEL "level3/Mram_ram2.B" PINNAME CLKB;
+PIN level3/Mram_ram4.A_pins<15> = BEL "level3/Mram_ram4.A" PINNAME CLKA;
+PIN level3/Mram_ram4.B_pins<15> = BEL "level3/Mram_ram4.B" PINNAME CLKB;
+PIN level3/Mram_ram5.A_pins<13> = BEL "level3/Mram_ram5.A" PINNAME CLKA;
+PIN level3/Mram_ram5.B_pins<13> = BEL "level3/Mram_ram5.B" PINNAME CLKB;
+TIMEGRP osc = BEL "speed_3" BEL "speed_9" BEL "dir_0" BEL "weB" BEL "dir0_0"
+        BEL "lP_0" BEL "pP_0" BEL "qP_0" BEL "aP_0" BEL "spcP_0" BEL "state_0"
+        BEL "mover_0" BEL "resetSyncronizer/aux_1" BEL
+        "resetSyncronizer/aux_0" BEL
+        "switchesSynchronizer[0].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[0].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[1].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[1].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[2].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[2].switchsynchronizer/aux_0" BEL
+        "switchesSynchronizer[3].switchsynchronizer/aux_1" BEL
+        "switchesSynchronizer[3].switchsynchronizer/aux_0" BEL "yLeft_0" BEL
+        "yLeft_1" BEL "yLeft_2" BEL "yLeft_5" BEL "yLeft_3" BEL "yLeft_4" BEL
+        "yLeft_6" BEL "yRight_1" BEL "yRight_0" BEL "yRight_2" BEL "yRight_3"
+        BEL "yRight_6" BEL "yRight_4" BEL "yRight_5" BEL "count_0" BEL
+        "count_1" BEL "count_2" BEL "count_3" BEL "count_4" BEL "count_5" BEL
+        "count_6" BEL "count_7" BEL "count_8" BEL "count_9" BEL "count_10" BEL
+        "count_11" BEL "count_12" BEL "count_13" BEL "count_14" BEL "count_15"
+        BEL "count_16" BEL "count_17" BEL "count_18" BEL "count_19" BEL
+        "count_20" BEL "count_21" BEL "count_22" BEL "count_23" BEL "count_24"
+        BEL "count_25" BEL "count_26" BEL "count_27" BEL "count_28" BEL
+        "count_29" BEL "count_30" BEL "yLeft_7" BEL "yRight_7" BEL
+        "inst_LPM_FF" BEL "inst_LPM_FF1" BEL "inst_LPM_FF2" BEL "inst_LPM_FF4"
+        BEL "yBall_0" BEL "yBall_1" BEL "yBall_2" BEL "yBall_3" BEL "yBall_6"
+        BEL "yBall_7" BEL "yBall_4" BEL "yBall_5" BEL "xBall_5" BEL "xBall_7"
+        BEL "xBall_6" BEL "xBall_4" BEL "xBall_3" BEL "xBall_2" BEL "xBall_1"
+        BEL "xBall_0" BEL "screenInteface/pixelCnt_9" BEL
+        "screenInteface/pixelCnt_8" BEL "screenInteface/pixelCnt_7" BEL
+        "screenInteface/pixelCnt_6" BEL "screenInteface/pixelCnt_5" BEL
+        "screenInteface/pixelCnt_4" BEL "screenInteface/pixelCnt_3" BEL
+        "screenInteface/pixelCnt_2" BEL "screenInteface/pixelCnt_1" BEL
+        "screenInteface/pixelCnt_0" BEL "screenInteface/lineCnt_9" BEL
+        "screenInteface/lineCnt_8" BEL "screenInteface/lineCnt_7" BEL
+        "screenInteface/lineCnt_6" BEL "screenInteface/lineCnt_5" BEL
+        "screenInteface/lineCnt_4" BEL "screenInteface/lineCnt_3" BEL
+        "screenInteface/lineCnt_2" BEL "screenInteface/lineCnt_1" BEL
+        "screenInteface/lineCnt_0" BEL "screenInteface/cycleCnt_0_0" BEL
+        "screenInteface/RGB_8" BEL "screenInteface/RGB_5" BEL
+        "screenInteface/RGB_2" BEL "screenInteface/RGB_0" BEL
+        "screenInteface/vSync" BEL "screenInteface/hSync" BEL
+        "ps2KeyboardInterface/ps2ClkEdgeDetector/aux1" BEL
+        "ps2KeyboardInterface/ps2ClkEdgeDetector/aux2" BEL
+        "ps2KeyboardInterface/ps2ClkSynchronizer/aux_0" BEL
+        "ps2KeyboardInterface/ps2ClkSynchronizer/aux_1" BEL
+        "ps2KeyboardInterface/ps2DataSynchronizer/aux_0" BEL
+        "ps2KeyboardInterface/ps2DataSynchronizer/aux_1" BEL
+        "ps2KeyboardInterface/ps2DataShf_10" BEL
+        "ps2KeyboardInterface/ps2DataShf_9" BEL
+        "ps2KeyboardInterface/ps2DataShf_8" BEL
+        "ps2KeyboardInterface/ps2DataShf_7" BEL
+        "ps2KeyboardInterface/ps2DataShf_6" BEL
+        "ps2KeyboardInterface/ps2DataShf_5" BEL
+        "ps2KeyboardInterface/ps2DataShf_4" BEL
+        "ps2KeyboardInterface/ps2DataShf_3" BEL
+        "ps2KeyboardInterface/ps2DataShf_2" BEL
+        "ps2KeyboardInterface/ps2DataShf_1" BEL
+        "ps2KeyboardInterface/ps2DataShf_0" PIN "level1/Mram_ram1.A_pins<15>"
+        PIN "level1/Mram_ram1.B_pins<15>" PIN "level1/Mram_ram2.A_pins<15>"
+        PIN "level1/Mram_ram2.B_pins<15>" PIN "level1/Mram_ram5.A_pins<13>"
+        PIN "level1/Mram_ram5.B_pins<13>" PIN "level1/Mram_ram3.A_pins<15>"
+        PIN "level1/Mram_ram3.B_pins<15>" PIN "level1/Mram_ram4.A_pins<15>"
+        PIN "level1/Mram_ram4.B_pins<15>" PIN "level2/Mram_ram1.A_pins<15>"
+        PIN "level2/Mram_ram1.B_pins<15>" PIN "level2/Mram_ram4.A_pins<15>"
+        PIN "level2/Mram_ram4.B_pins<15>" PIN "level2/Mram_ram2.A_pins<15>"
+        PIN "level2/Mram_ram2.B_pins<15>" PIN "level2/Mram_ram3.A_pins<15>"
+        PIN "level2/Mram_ram3.B_pins<15>" PIN "level2/Mram_ram5.A_pins<13>"
+        PIN "level2/Mram_ram5.B_pins<13>" PIN "level3/Mram_ram3.A_pins<15>"
+        PIN "level3/Mram_ram3.B_pins<15>" PIN "level3/Mram_ram1.A_pins<15>"
+        PIN "level3/Mram_ram1.B_pins<15>" PIN "level3/Mram_ram2.A_pins<15>"
+        PIN "level3/Mram_ram2.B_pins<15>" PIN "level3/Mram_ram4.A_pins<15>"
+        PIN "level3/Mram_ram4.B_pins<15>" PIN "level3/Mram_ram5.A_pins<13>"
+        PIN "level3/Mram_ram5.B_pins<13>" BEL "osc_BUFGP/BUFG.GCLKMUX" BEL
+        "osc_BUFGP/BUFG";
+TSosc = PERIOD TIMEGRP "osc" 20 ns HIGH 50%;
+SCHEMATIC END;
+

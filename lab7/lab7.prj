@@ -1,0 +1,7 @@
+vhdl work "../common/vgaInterface.vhd"
+vhdl work "../common/synchronizer.vhd"
+vhdl work "../common/edgedetector.vhd"
+vhdl work "../common/common.vhd"
+vhdl work "vgaTxtInterface.vhd"
+vhdl work "../common/ps2receiver.vhd"
+vhdl work "lab7.vhd"

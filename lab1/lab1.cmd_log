@@ -1,0 +1,16 @@
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab1/lab1.xst" -ofn "C:/hlocal/DAS/lab1/lab1.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab1/lab1.xst" -ofn "C:/hlocal/DAS/lab1/lab1.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab1/lab1.xst" -ofn "C:/hlocal/DAS/lab1/lab1.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab1/lab1.xst" -ofn "C:/hlocal/DAS/lab1/lab1.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab1/lab1.xst" -ofn "C:/hlocal/DAS/lab1/lab1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab1.ucf -p xc3s1000-ft256-5 lab1.ngc lab1.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab1_map.ncd lab1.ngd lab1.pcf 
+par -w -intstyle ise -ol high -t 1 lab1_map.ncd lab1.ncd lab1.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab1.twx lab1.ncd -o lab1.twr lab1.pcf -ucf lab1.ucf 
+bitgen -intstyle ise -f lab1.ut lab1.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab1/lab1.xst" -ofn "C:/hlocal/DAS/lab1/lab1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab1.ucf -p xc3s1000-ft256-5 lab1.ngc lab1.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab1_map.ncd lab1.ngd lab1.pcf 
+par -w -intstyle ise -ol high -t 1 lab1_map.ncd lab1.ncd lab1.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab1.twx lab1.ncd -o lab1.twr lab1.pcf -ucf lab1.ucf 
+bitgen -intstyle ise -f lab1.ut lab1.ncd 

@@ -1,0 +1,4 @@
+vhdl isim_temp "../common/synchronizer.vhd"
+vhdl isim_temp "../common/edgedetector.vhd"
+vhdl isim_temp "../common/common.vhd"
+vhdl isim_temp "../common/ps2receiver.vhd"

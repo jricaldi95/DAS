@@ -1,0 +1,3 @@
+vhdl work "C:\hlocal\DAS\common\vgaInterface.vhd"
+vhdl work "C:\hlocal\DAS\common\common.vhd"
+vhdl work "C:\hlocal\DAS\lab7\vgaTxtInterface.vhd"

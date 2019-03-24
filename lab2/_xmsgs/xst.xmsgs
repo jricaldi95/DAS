@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/hlocal/DAS/lab2/lab2.vhd</arg>&quot; line <arg fmt="%d" index="2">92</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">xRise</arg>&apos; of component &apos;<arg fmt="%s" index="4">edgeDetector</arg>&apos;.
+</msg>
+
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/hlocal/DAS/lab2/lab2.vhd</arg>&quot; line <arg fmt="%d" index="2">106</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">xRise</arg>&apos; of component &apos;<arg fmt="%s" index="4">edgeDetector</arg>&apos;.
+</msg>
+
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/hlocal/DAS/lab2/lab2.vhd</arg>&quot; line <arg fmt="%d" index="2">118</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">xRise</arg>&apos; of component &apos;<arg fmt="%s" index="4">edgeDetector</arg>&apos;.
+</msg>
+
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/hlocal/DAS/lab2/lab2.vhd</arg>&quot; line <arg fmt="%d" index="2">141</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">count</arg>&apos; of component &apos;<arg fmt="%s" index="4">modCounter</arg>&apos;.
+</msg>
+
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/hlocal/DAS/lab2/lab2.vhd</arg>&quot; line <arg fmt="%d" index="2">153</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">tc</arg>&apos; of component &apos;<arg fmt="%s" index="4">modCounter</arg>&apos;.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">dp</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">decCnt&lt;2:0&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+</messages>
+

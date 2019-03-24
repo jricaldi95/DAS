@@ -1,0 +1,5 @@
+set -tmpdir "C:/hlocal/DAS/lab3/xst/projnav.tmp"
+set -xsthdpdir "C:/hlocal/DAS/lab3/xst"
+elaborate
+-ifn bin2segs.prj
+-ifmt mixed

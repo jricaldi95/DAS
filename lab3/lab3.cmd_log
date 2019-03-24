@@ -1,0 +1,12 @@
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab3/lab3.xst" -ofn "C:/hlocal/DAS/lab3/lab3.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab3/lab3.xst" -ofn "C:/hlocal/DAS/lab3/lab3.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab3/lab3.xst" -ofn "C:/hlocal/DAS/lab3/lab3.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab3/lab3.xst" -ofn "C:/hlocal/DAS/lab3/lab3.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab3/lab3.xst" -ofn "C:/hlocal/DAS/lab3/lab3.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab3/lab3.xst" -ofn "C:/hlocal/DAS/lab3/lab3.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab3/lab3.xst" -ofn "C:/hlocal/DAS/lab3/lab3.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab3.ucf -p xc3s1000-ft256-5 lab3.ngc lab3.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab3_map.ncd lab3.ngd lab3.pcf 
+par -w -intstyle ise -ol high -t 1 lab3_map.ncd lab3.ncd lab3.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab3.twx lab3.ncd -o lab3.twr lab3.pcf -ucf lab3.ucf 
+bitgen -intstyle ise -f lab3.ut lab3.ncd 

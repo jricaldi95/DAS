@@ -1,0 +1,90 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon May 14 16:19:06 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "hSync" LOCATE = SITE "B7" LEVEL 1;
+COMP "vSync" LOCATE = SITE "D8" LEVEL 1;
+COMP "rstPb_n" LOCATE = SITE "E11" LEVEL 1;
+COMP "RGB<0>" LOCATE = SITE "C9" LEVEL 1;
+COMP "RGB<1>" LOCATE = SITE "E7" LEVEL 1;
+COMP "RGB<2>" LOCATE = SITE "D5" LEVEL 1;
+COMP "RGB<3>" LOCATE = SITE "A8" LEVEL 1;
+COMP "RGB<4>" LOCATE = SITE "A5" LEVEL 1;
+COMP "RGB<5>" LOCATE = SITE "C3" LEVEL 1;
+COMP "ps2Clk" LOCATE = SITE "B16" LEVEL 1;
+COMP "RGB<6>" LOCATE = SITE "C8" LEVEL 1;
+COMP "RGB<7>" LOCATE = SITE "D6" LEVEL 1;
+COMP "RGB<8>" LOCATE = SITE "B1" LEVEL 1;
+COMP "osc" LOCATE = SITE "P8" LEVEL 1;
+COMP "ps2Data" LOCATE = SITE "E13" LEVEL 1;
+NET "osc_BUFGP/IBUFG" BEL "osc_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+PIN screenInterface/charRamHigh.A_pins<12> = BEL
+        "screenInterface/charRamHigh.A" PINNAME CLKA;
+PIN screenInterface/charRamHigh.B_pins<12> = BEL
+        "screenInterface/charRamHigh.B" PINNAME CLKB;
+PIN screenInterface/charRamLow.A_pins<12> = BEL "screenInterface/charRamLow.A"
+        PINNAME CLKA;
+PIN screenInterface/charRamLow.B_pins<12> = BEL "screenInterface/charRamLow.B"
+        PINNAME CLKB;
+TIMEGRP osc = BEL "shiftP_0" BEL "capsOn_0" BEL "charRdy" BEL "state_0" BEL
+        "clear" BEL "resetSyncronizer/aux_1" BEL "resetSyncronizer/aux_0" BEL
+        "ps2KeyboardInterface/ps2ClkEdgeDetector/aux1" BEL
+        "ps2KeyboardInterface/ps2ClkEdgeDetector/aux2" BEL
+        "ps2KeyboardInterface/ps2ClkSynchronizer/aux_0" BEL
+        "ps2KeyboardInterface/ps2ClkSynchronizer/aux_1" BEL
+        "ps2KeyboardInterface/ps2DataSynchronizer/aux_0" BEL
+        "ps2KeyboardInterface/ps2DataSynchronizer/aux_1" BEL
+        "ps2KeyboardInterface/data_7" BEL "ps2KeyboardInterface/data_6" BEL
+        "ps2KeyboardInterface/data_5" BEL "ps2KeyboardInterface/data_4" BEL
+        "ps2KeyboardInterface/data_3" BEL "ps2KeyboardInterface/data_2" BEL
+        "ps2KeyboardInterface/data_1" BEL "ps2KeyboardInterface/data_0" BEL
+        "ps2KeyboardInterface/dataRdy" BEL
+        "ps2KeyboardInterface/ps2DataShf_10" BEL
+        "ps2KeyboardInterface/ps2DataShf_9" BEL
+        "ps2KeyboardInterface/ps2DataShf_8" BEL
+        "ps2KeyboardInterface/ps2DataShf_7" BEL
+        "ps2KeyboardInterface/ps2DataShf_6" BEL
+        "ps2KeyboardInterface/ps2DataShf_5" BEL
+        "ps2KeyboardInterface/ps2DataShf_4" BEL
+        "ps2KeyboardInterface/ps2DataShf_3" BEL
+        "ps2KeyboardInterface/ps2DataShf_2" BEL
+        "ps2KeyboardInterface/ps2DataShf_1" BEL
+        "ps2KeyboardInterface/ps2DataShf_0" BEL
+        "screenInterface/screenInteface/hSync" BEL
+        "screenInterface/screenInteface/vSync" BEL
+        "screenInterface/screenInteface/RGB_0" BEL
+        "screenInterface/screenInteface/cycleCnt_0_0" BEL
+        "screenInterface/screenInteface/lineCnt_0" BEL
+        "screenInterface/screenInteface/lineCnt_1" BEL
+        "screenInterface/screenInteface/lineCnt_2" BEL
+        "screenInterface/screenInteface/lineCnt_3" BEL
+        "screenInterface/screenInteface/lineCnt_4" BEL
+        "screenInterface/screenInteface/lineCnt_5" BEL
+        "screenInterface/screenInteface/lineCnt_6" BEL
+        "screenInterface/screenInteface/lineCnt_7" BEL
+        "screenInterface/screenInteface/lineCnt_8" BEL
+        "screenInterface/screenInteface/lineCnt_9" BEL
+        "screenInterface/screenInteface/pixelCnt_0" BEL
+        "screenInterface/screenInteface/pixelCnt_1" BEL
+        "screenInterface/screenInteface/pixelCnt_2" BEL
+        "screenInterface/screenInteface/pixelCnt_3" BEL
+        "screenInterface/screenInteface/pixelCnt_4" BEL
+        "screenInterface/screenInteface/pixelCnt_5" BEL
+        "screenInterface/screenInteface/pixelCnt_6" BEL
+        "screenInterface/screenInteface/pixelCnt_7" BEL
+        "screenInterface/screenInteface/pixelCnt_8" BEL
+        "screenInterface/screenInteface/pixelCnt_9" BEL
+        "screenInterface/clearCol_6" BEL "screenInterface/clearCol_5" BEL
+        "screenInterface/clearCol_4" BEL "screenInterface/clearCol_3" BEL
+        "screenInterface/clearCol_2" BEL "screenInterface/clearCol_1" BEL
+        "screenInterface/clearCol_0" BEL "screenInterface/cleraringRam" BEL
+        "screenInterface/bitMapRomHigh.A" BEL "screenInterface/bitMapRomLow.A"
+        PIN "screenInterface/charRamHigh.A_pins<12>" PIN
+        "screenInterface/charRamHigh.B_pins<12>" PIN
+        "screenInterface/charRamLow.A_pins<12>" PIN
+        "screenInterface/charRamLow.B_pins<12>" BEL "osc_BUFGP/BUFG.GCLKMUX"
+        BEL "osc_BUFGP/BUFG";
+TSosc = PERIOD TIMEGRP "osc" 20 ns HIGH 50%;
+SCHEMATIC END;
+

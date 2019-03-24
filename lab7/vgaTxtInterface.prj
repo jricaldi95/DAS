@@ -1,0 +1,3 @@
+vhdl work "../common/vgaInterface.vhd"
+vhdl work "../common/common.vhd"
+vhdl work "vgaTxtInterface.vhd"

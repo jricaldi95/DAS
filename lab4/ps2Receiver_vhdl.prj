@@ -1,0 +1,4 @@
+vhdl work "C:\hlocal\DAS\common\synchronizer.vhd"
+vhdl work "C:\hlocal\DAS\common\edgedetector.vhd"
+vhdl work "C:\hlocal\DAS\common\common.vhd"
+vhdl work "C:\hlocal\DAS\common\ps2receiver.vhd"

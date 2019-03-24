@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "F:/DAS/lab4/ps2ReceiverTest_isim_beh.exe" -prj "F:/DAS/lab4/ps2ReceiverTest_beh.prj" "work.ps2ReceiverTest" 

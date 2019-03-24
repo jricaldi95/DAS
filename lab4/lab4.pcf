@@ -1,0 +1,63 @@
+//! **************************************************************************
+// Written by: Map P.15xf on Thu Mar 15 19:37:43 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "rightSegs<7>" LOCATE = SITE "H4" LEVEL 1;
+COMP "rstPb_n" LOCATE = SITE "E11" LEVEL 1;
+COMP "speaker" LOCATE = SITE "L5" LEVEL 1;
+COMP "leftSegs<0>" LOCATE = SITE "G16" LEVEL 1;
+COMP "leftSegs<1>" LOCATE = SITE "H13" LEVEL 1;
+COMP "ps2Clk" LOCATE = SITE "B16" LEVEL 1;
+COMP "leftSegs<2>" LOCATE = SITE "M15" LEVEL 1;
+COMP "leftSegs<3>" LOCATE = SITE "N3" LEVEL 1;
+COMP "leftSegs<4>" LOCATE = SITE "P1" LEVEL 1;
+COMP "leftSegs<5>" LOCATE = SITE "M4" LEVEL 1;
+COMP "leftSegs<6>" LOCATE = SITE "H14" LEVEL 1;
+COMP "leftSegs<7>" LOCATE = SITE "N15" LEVEL 1;
+COMP "osc" LOCATE = SITE "P8" LEVEL 1;
+COMP "ps2Data" LOCATE = SITE "E13" LEVEL 1;
+COMP "rightSegs<0>" LOCATE = SITE "G1" LEVEL 1;
+COMP "rightSegs<1>" LOCATE = SITE "G3" LEVEL 1;
+COMP "rightSegs<2>" LOCATE = SITE "G4" LEVEL 1;
+COMP "rightSegs<3>" LOCATE = SITE "F2" LEVEL 1;
+COMP "rightSegs<4>" LOCATE = SITE "F3" LEVEL 1;
+COMP "rightSegs<5>" LOCATE = SITE "E1" LEVEL 1;
+COMP "rightSegs<6>" LOCATE = SITE "E2" LEVEL 1;
+NET "osc_BUFGP/IBUFG" BEL "osc_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+TIMEGRP osc = BEL "speakerTFF" BEL "code_0" BEL "code_1" BEL "code_2" BEL
+        "code_3" BEL "code_4" BEL "code_5" BEL "code_6" BEL "code_7" BEL
+        "resetSyncronizer/aux_1" BEL "resetSyncronizer/aux_0" BEL "count_0"
+        BEL "count_1" BEL "count_2" BEL "count_3" BEL "count_4" BEL "count_5"
+        BEL "count_6" BEL "count_7" BEL "count_8" BEL "count_9" BEL "count_10"
+        BEL "count_11" BEL "count_12" BEL "count_13" BEL "count_14" BEL
+        "count_15" BEL "count_16" BEL "count_17" BEL "count_18" BEL "count_19"
+        BEL "count_20" BEL "count_21" BEL "count_22" BEL "count_23" BEL
+        "count_24" BEL "count_25" BEL "count_26" BEL "count_27" BEL "count_28"
+        BEL "count_29" BEL "count_30" BEL "state_FSM_FFd1" BEL
+        "state_FSM_FFd2" BEL "ps2KeyboardInterface/ps2ClkEdgeDetector/aux1"
+        BEL "ps2KeyboardInterface/ps2ClkEdgeDetector/aux2" BEL
+        "ps2KeyboardInterface/ps2ClkSynchronizer/aux_0" BEL
+        "ps2KeyboardInterface/ps2ClkSynchronizer/aux_1" BEL
+        "ps2KeyboardInterface/ps2DataSynchronizer/aux_0" BEL
+        "ps2KeyboardInterface/ps2DataSynchronizer/aux_1" BEL
+        "ps2KeyboardInterface/data_7" BEL "ps2KeyboardInterface/data_6" BEL
+        "ps2KeyboardInterface/data_5" BEL "ps2KeyboardInterface/data_4" BEL
+        "ps2KeyboardInterface/data_3" BEL "ps2KeyboardInterface/data_2" BEL
+        "ps2KeyboardInterface/data_1" BEL "ps2KeyboardInterface/data_0" BEL
+        "ps2KeyboardInterface/dataRdy" BEL
+        "ps2KeyboardInterface/ps2DataShf_10" BEL
+        "ps2KeyboardInterface/ps2DataShf_9" BEL
+        "ps2KeyboardInterface/ps2DataShf_8" BEL
+        "ps2KeyboardInterface/ps2DataShf_7" BEL
+        "ps2KeyboardInterface/ps2DataShf_6" BEL
+        "ps2KeyboardInterface/ps2DataShf_5" BEL
+        "ps2KeyboardInterface/ps2DataShf_4" BEL
+        "ps2KeyboardInterface/ps2DataShf_3" BEL
+        "ps2KeyboardInterface/ps2DataShf_2" BEL
+        "ps2KeyboardInterface/ps2DataShf_1" BEL
+        "ps2KeyboardInterface/ps2DataShf_0" BEL "osc_BUFGP/BUFG.GCLKMUX" BEL
+        "osc_BUFGP/BUFG";
+TSosc = PERIOD TIMEGRP "osc" 20 ns HIGH 50%;
+SCHEMATIC END;
+

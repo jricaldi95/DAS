@@ -1,0 +1,39 @@
+Release 14.1 - xst P.15xf (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/hlocal/DAS/lab7/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> Parameter xsthdpdir set to C:/hlocal/DAS/lab7/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/hlocal/DAS/common/common.vhd" in Library work.
+Architecture common of Entity common is up to date.
+Compiling vhdl file "C:/hlocal/DAS/common/vgaInterface.vhd" in Library work.
+Architecture syn of Entity vgainterface is up to date.
+Compiling vhdl file "C:/hlocal/DAS/lab7/vgaTxtInterface.vhd" in Library work.
+Entity <vgatxtinterface> compiled.
+ERROR:HDLParsers:802 - "C:/hlocal/DAS/lab7/vgaTxtInterface.vhd" Line 118. - is not a boolean expression.
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> 
+
+Total memory usage is 222208 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

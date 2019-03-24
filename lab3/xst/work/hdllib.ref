@@ -1,0 +1,14 @@
+EN edgedetector NULL C:/hlocal/DAS/common/edgedetector.vhd sub00/vhpl06 1520013330
+PB common common C:/hlocal/DAS/common/common.vhd sub00/vhpl09 1520013323
+AR lab3 syn C:/hlocal/DAS/lab3/lab3.vhd sub00/vhpl13 1520013335
+EN bin2segs NULL C:/hlocal/DAS/common/bin2segs.vhd sub00/vhpl11 1520013332
+AR debouncer syn C:/hlocal/DAS/common/debouncer.vhd sub00/vhpl05 1520013329
+EN lab3 NULL C:/hlocal/DAS/lab3/lab3.vhd sub00/vhpl10 1520013334
+EN frequencysynthesizer NULL C:/hlocal/DAS/common/frequencysinthesizer.vhd sub00/vhpl02 1520013326
+AR bin2segs syn C:/hlocal/DAS/common/bin2segs.vhd sub00/vhpl12 1520013333
+AR synchronizer syn C:/hlocal/DAS/common/synchronizer.vhd sub00/vhpl01 1520013325
+PH common NULL C:/hlocal/DAS/common/common.vhd sub00/vhpl08 1520013322
+EN synchronizer NULL C:/hlocal/DAS/common/synchronizer.vhd sub00/vhpl00 1520013324
+AR frequencysynthesizer syn C:/hlocal/DAS/common/frequencysinthesizer.vhd sub00/vhpl03 1520013327
+EN debouncer NULL C:/hlocal/DAS/common/debouncer.vhd sub00/vhpl04 1520013328
+AR edgedetector syn C:/hlocal/DAS/common/edgedetector.vhd sub00/vhpl07 1520013331

@@ -1,0 +1,524 @@
+--------------------------------------------------------------------------------
+Release 14.1 Trace  (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+C:\software\electronica\xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe
+-intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab5.twx lab5.ncd -o lab5.twr
+lab5.pcf -ucf lab5.ucf
+
+Design file:              lab5.ncd
+Physical constraint file: lab5.pcf
+Device,package,speed:     xc3s1000,ft256,-5 (PRODUCTION 1.39 2012-04-23)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: TSosc = PERIOD TIMEGRP "osc" 20 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 5436 paths analyzed, 471 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   8.924ns.
+--------------------------------------------------------------------------------
+
+Paths for end point fifo/regFile_4_1 (SLICE_X26Y55.CE), 25 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     11.076ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               receiver/count_10 (FF)
+  Destination:          fifo/regFile_4_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      8.924ns (Levels of Logic = 4)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: receiver/count_10 to fifo/regFile_4_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y34.YQ      Tcko                  0.626   receiver/count<11>
+                                                       receiver/count_10
+    SLICE_X14Y32.G2      net (fanout=2)        0.545   receiver/count<10>
+    SLICE_X14Y32.Y       Tilo                  0.529   receiver/N01
+                                                       receiver/count_cmp_eq00001_SW0
+    SLICE_X14Y32.F4      net (fanout=2)        0.028   N36
+    SLICE_X14Y32.X       Tilo                  0.529   receiver/N01
+                                                       receiver/count_cmp_eq00001
+    SLICE_X31Y43.G2      net (fanout=5)        1.559   receiver/N01
+    SLICE_X31Y43.Y       Tilo                  0.479   fifo/regFile_8_and0000
+                                                       fifo/wrFifo_and0000_1
+    SLICE_X34Y43.F1      net (fanout=12)       1.463   fifo/wrFifo_and0000
+    SLICE_X34Y43.X       Tilo                  0.529   fifo/regFile_4_and0000
+                                                       fifo/regFile_4_and00001
+    SLICE_X26Y55.CE      net (fanout=4)        2.113   fifo/regFile_4_and0000
+    SLICE_X26Y55.CLK     Tceck                 0.524   fifo/regFile_4_1
+                                                       fifo/regFile_4_1
+    -------------------------------------------------  ---------------------------
+    Total                                      8.924ns (3.216ns logic, 5.708ns route)
+                                                       (36.0% logic, 64.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.122ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               receiver/count_1 (FF)
+  Destination:          fifo/regFile_4_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      8.878ns (Levels of Logic = 4)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: receiver/count_1 to fifo/regFile_4_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y30.XQ      Tcko                  0.626   receiver/count<1>
+                                                       receiver/count_1
+    SLICE_X14Y32.G1      net (fanout=2)        0.499   receiver/count<1>
+    SLICE_X14Y32.Y       Tilo                  0.529   receiver/N01
+                                                       receiver/count_cmp_eq00001_SW0
+    SLICE_X14Y32.F4      net (fanout=2)        0.028   N36
+    SLICE_X14Y32.X       Tilo                  0.529   receiver/N01
+                                                       receiver/count_cmp_eq00001
+    SLICE_X31Y43.G2      net (fanout=5)        1.559   receiver/N01
+    SLICE_X31Y43.Y       Tilo                  0.479   fifo/regFile_8_and0000
+                                                       fifo/wrFifo_and0000_1
+    SLICE_X34Y43.F1      net (fanout=12)       1.463   fifo/wrFifo_and0000
+    SLICE_X34Y43.X       Tilo                  0.529   fifo/regFile_4_and0000
+                                                       fifo/regFile_4_and00001
+    SLICE_X26Y55.CE      net (fanout=4)        2.113   fifo/regFile_4_and0000
+    SLICE_X26Y55.CLK     Tceck                 0.524   fifo/regFile_4_1
+                                                       fifo/regFile_4_1
+    -------------------------------------------------  ---------------------------
+    Total                                      8.878ns (3.216ns logic, 5.662ns route)
+                                                       (36.2% logic, 63.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.151ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               receiver/count_7 (FF)
+  Destination:          fifo/regFile_4_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      8.849ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: receiver/count_7 to fifo/regFile_4_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y32.YQ      Tcko                  0.626   receiver/count<7>
+                                                       receiver/count_7
+    SLICE_X17Y36.G1      net (fanout=3)        0.914   receiver/count<7>
+    SLICE_X17Y36.Y       Tilo                  0.479   N74
+                                                       receiver/readRxD_cmp_eq000010
+    SLICE_X31Y43.G1      net (fanout=6)        1.722   receiver/readRxD_cmp_eq000010
+    SLICE_X31Y43.Y       Tilo                  0.479   fifo/regFile_8_and0000
+                                                       fifo/wrFifo_and0000_1
+    SLICE_X34Y43.F1      net (fanout=12)       1.463   fifo/wrFifo_and0000
+    SLICE_X34Y43.X       Tilo                  0.529   fifo/regFile_4_and0000
+                                                       fifo/regFile_4_and00001
+    SLICE_X26Y55.CE      net (fanout=4)        2.113   fifo/regFile_4_and0000
+    SLICE_X26Y55.CLK     Tceck                 0.524   fifo/regFile_4_1
+                                                       fifo/regFile_4_1
+    -------------------------------------------------  ---------------------------
+    Total                                      8.849ns (2.637ns logic, 6.212ns route)
+                                                       (29.8% logic, 70.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point fifo/regFile_4_0 (SLICE_X26Y55.CE), 25 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     11.076ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               receiver/count_10 (FF)
+  Destination:          fifo/regFile_4_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      8.924ns (Levels of Logic = 4)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: receiver/count_10 to fifo/regFile_4_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y34.YQ      Tcko                  0.626   receiver/count<11>
+                                                       receiver/count_10
+    SLICE_X14Y32.G2      net (fanout=2)        0.545   receiver/count<10>
+    SLICE_X14Y32.Y       Tilo                  0.529   receiver/N01
+                                                       receiver/count_cmp_eq00001_SW0
+    SLICE_X14Y32.F4      net (fanout=2)        0.028   N36
+    SLICE_X14Y32.X       Tilo                  0.529   receiver/N01
+                                                       receiver/count_cmp_eq00001
+    SLICE_X31Y43.G2      net (fanout=5)        1.559   receiver/N01
+    SLICE_X31Y43.Y       Tilo                  0.479   fifo/regFile_8_and0000
+                                                       fifo/wrFifo_and0000_1
+    SLICE_X34Y43.F1      net (fanout=12)       1.463   fifo/wrFifo_and0000
+    SLICE_X34Y43.X       Tilo                  0.529   fifo/regFile_4_and0000
+                                                       fifo/regFile_4_and00001
+    SLICE_X26Y55.CE      net (fanout=4)        2.113   fifo/regFile_4_and0000
+    SLICE_X26Y55.CLK     Tceck                 0.524   fifo/regFile_4_1
+                                                       fifo/regFile_4_0
+    -------------------------------------------------  ---------------------------
+    Total                                      8.924ns (3.216ns logic, 5.708ns route)
+                                                       (36.0% logic, 64.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.122ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               receiver/count_1 (FF)
+  Destination:          fifo/regFile_4_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      8.878ns (Levels of Logic = 4)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: receiver/count_1 to fifo/regFile_4_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y30.XQ      Tcko                  0.626   receiver/count<1>
+                                                       receiver/count_1
+    SLICE_X14Y32.G1      net (fanout=2)        0.499   receiver/count<1>
+    SLICE_X14Y32.Y       Tilo                  0.529   receiver/N01
+                                                       receiver/count_cmp_eq00001_SW0
+    SLICE_X14Y32.F4      net (fanout=2)        0.028   N36
+    SLICE_X14Y32.X       Tilo                  0.529   receiver/N01
+                                                       receiver/count_cmp_eq00001
+    SLICE_X31Y43.G2      net (fanout=5)        1.559   receiver/N01
+    SLICE_X31Y43.Y       Tilo                  0.479   fifo/regFile_8_and0000
+                                                       fifo/wrFifo_and0000_1
+    SLICE_X34Y43.F1      net (fanout=12)       1.463   fifo/wrFifo_and0000
+    SLICE_X34Y43.X       Tilo                  0.529   fifo/regFile_4_and0000
+                                                       fifo/regFile_4_and00001
+    SLICE_X26Y55.CE      net (fanout=4)        2.113   fifo/regFile_4_and0000
+    SLICE_X26Y55.CLK     Tceck                 0.524   fifo/regFile_4_1
+                                                       fifo/regFile_4_0
+    -------------------------------------------------  ---------------------------
+    Total                                      8.878ns (3.216ns logic, 5.662ns route)
+                                                       (36.2% logic, 63.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.151ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               receiver/count_7 (FF)
+  Destination:          fifo/regFile_4_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      8.849ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: receiver/count_7 to fifo/regFile_4_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y32.YQ      Tcko                  0.626   receiver/count<7>
+                                                       receiver/count_7
+    SLICE_X17Y36.G1      net (fanout=3)        0.914   receiver/count<7>
+    SLICE_X17Y36.Y       Tilo                  0.479   N74
+                                                       receiver/readRxD_cmp_eq000010
+    SLICE_X31Y43.G1      net (fanout=6)        1.722   receiver/readRxD_cmp_eq000010
+    SLICE_X31Y43.Y       Tilo                  0.479   fifo/regFile_8_and0000
+                                                       fifo/wrFifo_and0000_1
+    SLICE_X34Y43.F1      net (fanout=12)       1.463   fifo/wrFifo_and0000
+    SLICE_X34Y43.X       Tilo                  0.529   fifo/regFile_4_and0000
+                                                       fifo/regFile_4_and00001
+    SLICE_X26Y55.CE      net (fanout=4)        2.113   fifo/regFile_4_and0000
+    SLICE_X26Y55.CLK     Tceck                 0.524   fifo/regFile_4_1
+                                                       fifo/regFile_4_0
+    -------------------------------------------------  ---------------------------
+    Total                                      8.849ns (2.637ns logic, 6.212ns route)
+                                                       (29.8% logic, 70.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point fifo/isEmpty (SLICE_X39Y32.CE), 52 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     11.394ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               receiver/count_10 (FF)
+  Destination:          fifo/isEmpty (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      8.598ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.008ns (0.411 - 0.419)
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: receiver/count_10 to fifo/isEmpty
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y34.YQ      Tcko                  0.626   receiver/count<11>
+                                                       receiver/count_10
+    SLICE_X14Y32.G2      net (fanout=2)        0.545   receiver/count<10>
+    SLICE_X14Y32.Y       Tilo                  0.529   receiver/N01
+                                                       receiver/count_cmp_eq00001_SW0
+    SLICE_X14Y32.F4      net (fanout=2)        0.028   N36
+    SLICE_X14Y32.X       Tilo                  0.529   receiver/N01
+                                                       receiver/count_cmp_eq00001
+    SLICE_X31Y43.G2      net (fanout=5)        1.559   receiver/N01
+    SLICE_X31Y43.Y       Tilo                  0.479   fifo/regFile_8_and0000
+                                                       fifo/wrFifo_and0000_1
+    SLICE_X38Y32.F1      net (fanout=12)       2.050   fifo/wrFifo_and0000
+    SLICE_X38Y32.X       Tilo                  0.529   fifo/isEmpty_not0001
+                                                       fifo/isEmpty_not00011
+    SLICE_X39Y32.CE      net (fanout=1)        1.200   fifo/isEmpty_not0001
+    SLICE_X39Y32.CLK     Tceck                 0.524   fifo/isEmpty
+                                                       fifo/isEmpty
+    -------------------------------------------------  ---------------------------
+    Total                                      8.598ns (3.216ns logic, 5.382ns route)
+                                                       (37.4% logic, 62.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.448ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               receiver/count_1 (FF)
+  Destination:          fifo/isEmpty (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      8.552ns (Levels of Logic = 4)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: receiver/count_1 to fifo/isEmpty
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y30.XQ      Tcko                  0.626   receiver/count<1>
+                                                       receiver/count_1
+    SLICE_X14Y32.G1      net (fanout=2)        0.499   receiver/count<1>
+    SLICE_X14Y32.Y       Tilo                  0.529   receiver/N01
+                                                       receiver/count_cmp_eq00001_SW0
+    SLICE_X14Y32.F4      net (fanout=2)        0.028   N36
+    SLICE_X14Y32.X       Tilo                  0.529   receiver/N01
+                                                       receiver/count_cmp_eq00001
+    SLICE_X31Y43.G2      net (fanout=5)        1.559   receiver/N01
+    SLICE_X31Y43.Y       Tilo                  0.479   fifo/regFile_8_and0000
+                                                       fifo/wrFifo_and0000_1
+    SLICE_X38Y32.F1      net (fanout=12)       2.050   fifo/wrFifo_and0000
+    SLICE_X38Y32.X       Tilo                  0.529   fifo/isEmpty_not0001
+                                                       fifo/isEmpty_not00011
+    SLICE_X39Y32.CE      net (fanout=1)        1.200   fifo/isEmpty_not0001
+    SLICE_X39Y32.CLK     Tceck                 0.524   fifo/isEmpty
+                                                       fifo/isEmpty
+    -------------------------------------------------  ---------------------------
+    Total                                      8.552ns (3.216ns logic, 5.336ns route)
+                                                       (37.6% logic, 62.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.477ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               receiver/count_7 (FF)
+  Destination:          fifo/isEmpty (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      8.523ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: receiver/count_7 to fifo/isEmpty
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y32.YQ      Tcko                  0.626   receiver/count<7>
+                                                       receiver/count_7
+    SLICE_X17Y36.G1      net (fanout=3)        0.914   receiver/count<7>
+    SLICE_X17Y36.Y       Tilo                  0.479   N74
+                                                       receiver/readRxD_cmp_eq000010
+    SLICE_X31Y43.G1      net (fanout=6)        1.722   receiver/readRxD_cmp_eq000010
+    SLICE_X31Y43.Y       Tilo                  0.479   fifo/regFile_8_and0000
+                                                       fifo/wrFifo_and0000_1
+    SLICE_X38Y32.F1      net (fanout=12)       2.050   fifo/wrFifo_and0000
+    SLICE_X38Y32.X       Tilo                  0.529   fifo/isEmpty_not0001
+                                                       fifo/isEmpty_not00011
+    SLICE_X39Y32.CE      net (fanout=1)        1.200   fifo/isEmpty_not0001
+    SLICE_X39Y32.CLK     Tceck                 0.524   fifo/isEmpty
+                                                       fifo/isEmpty
+    -------------------------------------------------  ---------------------------
+    Total                                      8.523ns (2.637ns logic, 5.886ns route)
+                                                       (30.9% logic, 69.1% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TSosc = PERIOD TIMEGRP "osc" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point TxEnableSynchronizer/aux_1 (SLICE_X50Y54.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.702ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               TxEnableSynchronizer/aux_0 (FF)
+  Destination:          TxEnableSynchronizer/aux_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.702ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 20.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: TxEnableSynchronizer/aux_0 to TxEnableSynchronizer/aux_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y54.YQ      Tcko                  0.501   TxEnableSynchronizer/aux<1>
+                                                       TxEnableSynchronizer/aux_0
+    SLICE_X50Y54.BX      net (fanout=1)        0.447   TxEnableSynchronizer/aux<0>
+    SLICE_X50Y54.CLK     Tckdi       (-Th)     0.246   TxEnableSynchronizer/aux<1>
+                                                       TxEnableSynchronizer/aux_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.702ns (0.255ns logic, 0.447ns route)
+                                                       (36.3% logic, 63.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point receiver/RxDSynchronizer/aux_1 (SLICE_X17Y55.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.702ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               receiver/RxDSynchronizer/aux_0 (FF)
+  Destination:          receiver/RxDSynchronizer/aux_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.702ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 20.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: receiver/RxDSynchronizer/aux_0 to receiver/RxDSynchronizer/aux_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y55.YQ      Tcko                  0.501   receiver/RxDSynchronizer/aux<1>
+                                                       receiver/RxDSynchronizer/aux_0
+    SLICE_X17Y55.BX      net (fanout=1)        0.447   receiver/RxDSynchronizer/aux<0>
+    SLICE_X17Y55.CLK     Tckdi       (-Th)     0.246   receiver/RxDSynchronizer/aux<1>
+                                                       receiver/RxDSynchronizer/aux_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.702ns (0.255ns logic, 0.447ns route)
+                                                       (36.3% logic, 63.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point resetSyncronizer/aux_1 (SLICE_X45Y94.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.702ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               resetSyncronizer/aux_0 (FF)
+  Destination:          resetSyncronizer/aux_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.702ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 20.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: resetSyncronizer/aux_0 to resetSyncronizer/aux_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y94.YQ      Tcko                  0.501   resetSyncronizer/aux<1>
+                                                       resetSyncronizer/aux_0
+    SLICE_X45Y94.BX      net (fanout=1)        0.447   resetSyncronizer/aux<0>
+    SLICE_X45Y94.CLK     Tckdi       (-Th)     0.246   resetSyncronizer/aux<1>
+                                                       resetSyncronizer/aux_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.702ns (0.255ns logic, 0.447ns route)
+                                                       (36.3% logic, 63.7% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TSosc = PERIOD TIMEGRP "osc" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 18.498ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.751ns (Trpw)
+  Physical resource: fifo/regFile_3_7/SR
+  Logical resource: fifo/regFile_3_7/SR
+  Location pin: SLICE_X44Y44.SR
+  Clock network: resetSyncronizer/aux<1>
+--------------------------------------------------------------------------------
+Slack: 18.498ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.751ns (Trpw)
+  Physical resource: fifo/regFile_3_7/SR
+  Logical resource: fifo/regFile_3_7/SR
+  Location pin: SLICE_X44Y44.SR
+  Clock network: resetSyncronizer/aux<1>
+--------------------------------------------------------------------------------
+Slack: 18.498ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.751ns (Trpw)
+  Physical resource: fifo/regFile_3_7/SR
+  Logical resource: fifo/regFile_3_6/SR
+  Location pin: SLICE_X44Y44.SR
+  Clock network: resetSyncronizer/aux<1>
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock osc
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+osc            |    8.924|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 5436 paths, 0 nets, and 1110 connections
+
+Design statistics:
+   Minimum period:   8.924ns{1}   (Maximum frequency: 112.057MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Mon Apr 16 15:22:07 2018 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 174 MB
+
+
+

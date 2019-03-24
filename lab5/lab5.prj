@@ -1,0 +1,6 @@
+vhdl work "../common/synchronizer.vhd"
+vhdl work "../common/rs232Transmitter.vhd"
+vhdl work "../common/rs232Receiver.vhd"
+vhdl work "../common/fifo.vhd"
+vhdl work "../common/bin2segs.vhd"
+vhdl work "lab5.vhd"

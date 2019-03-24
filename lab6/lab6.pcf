@@ -1,0 +1,68 @@
+//! **************************************************************************
+// Written by: Map P.15xf on Fri May 25 17:52:51 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "osc" LOCATE = SITE "P8" LEVEL 1;
+COMP "ps2Data" LOCATE = SITE "E13" LEVEL 1;
+COMP "hSync" LOCATE = SITE "B7" LEVEL 1;
+COMP "vSync" LOCATE = SITE "D8" LEVEL 1;
+COMP "rstPb_n" LOCATE = SITE "E11" LEVEL 1;
+COMP "RGB<0>" LOCATE = SITE "C9" LEVEL 1;
+COMP "RGB<1>" LOCATE = SITE "E7" LEVEL 1;
+COMP "RGB<2>" LOCATE = SITE "D5" LEVEL 1;
+COMP "RGB<3>" LOCATE = SITE "A8" LEVEL 1;
+COMP "RGB<4>" LOCATE = SITE "A5" LEVEL 1;
+COMP "RGB<5>" LOCATE = SITE "C3" LEVEL 1;
+COMP "RGB<6>" LOCATE = SITE "C8" LEVEL 1;
+COMP "RGB<7>" LOCATE = SITE "D6" LEVEL 1;
+COMP "RGB<8>" LOCATE = SITE "B1" LEVEL 1;
+COMP "ps2Clk" LOCATE = SITE "B16" LEVEL 1;
+NET "osc_BUFGP/IBUFG" BEL "osc_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+TIMEGRP osc = BEL "dir_0" BEL "dir0_0" BEL "lP_0" BEL "pP_0" BEL "qP_0" BEL
+        "mover_0" BEL "aP_0" BEL "spcP_0" BEL "state_0" BEL
+        "resetSyncronizer/aux_1" BEL "resetSyncronizer/aux_0" BEL "count_0"
+        BEL "count_1" BEL "count_2" BEL "count_3" BEL "count_4" BEL "count_5"
+        BEL "count_6" BEL "count_7" BEL "count_8" BEL "count_9" BEL "count_10"
+        BEL "count_11" BEL "count_12" BEL "count_13" BEL "count_14" BEL
+        "count_15" BEL "count_16" BEL "count_17" BEL "count_18" BEL "count_19"
+        BEL "yLeft_0" BEL "yLeft_1" BEL "yLeft_4" BEL "yLeft_2" BEL "yLeft_3"
+        BEL "yLeft_5" BEL "yLeft_6" BEL "yRight_0" BEL "yRight_1" BEL
+        "yRight_2" BEL "yRight_5" BEL "yRight_3" BEL "yRight_4" BEL "yRight_6"
+        BEL "yLeft_7" BEL "yRight_7" BEL "yBall_5" BEL "yBall_4" BEL "yBall_7"
+        BEL "yBall_6" BEL "yBall_3" BEL "yBall_2" BEL "yBall_1" BEL "yBall_0"
+        BEL "xBall_5" BEL "xBall_7" BEL "xBall_6" BEL "xBall_4" BEL "xBall_3"
+        BEL "xBall_2" BEL "xBall_1" BEL "xBall_0" BEL
+        "screenInteface/pixelCnt_9" BEL "screenInteface/pixelCnt_8" BEL
+        "screenInteface/pixelCnt_7" BEL "screenInteface/pixelCnt_6" BEL
+        "screenInteface/pixelCnt_5" BEL "screenInteface/pixelCnt_4" BEL
+        "screenInteface/pixelCnt_3" BEL "screenInteface/pixelCnt_2" BEL
+        "screenInteface/pixelCnt_1" BEL "screenInteface/pixelCnt_0" BEL
+        "screenInteface/lineCnt_9" BEL "screenInteface/lineCnt_8" BEL
+        "screenInteface/lineCnt_7" BEL "screenInteface/lineCnt_6" BEL
+        "screenInteface/lineCnt_5" BEL "screenInteface/lineCnt_4" BEL
+        "screenInteface/lineCnt_3" BEL "screenInteface/lineCnt_2" BEL
+        "screenInteface/lineCnt_1" BEL "screenInteface/lineCnt_0" BEL
+        "screenInteface/cycleCnt_0_0" BEL "screenInteface/RGB_0" BEL
+        "screenInteface/vSync" BEL "screenInteface/hSync" BEL
+        "ps2KeyboardInterface/ps2ClkEdgeDetector/aux1" BEL
+        "ps2KeyboardInterface/ps2ClkEdgeDetector/aux2" BEL
+        "ps2KeyboardInterface/ps2ClkSynchronizer/aux_0" BEL
+        "ps2KeyboardInterface/ps2ClkSynchronizer/aux_1" BEL
+        "ps2KeyboardInterface/ps2DataSynchronizer/aux_0" BEL
+        "ps2KeyboardInterface/ps2DataSynchronizer/aux_1" BEL
+        "ps2KeyboardInterface/ps2DataShf_10" BEL
+        "ps2KeyboardInterface/ps2DataShf_9" BEL
+        "ps2KeyboardInterface/ps2DataShf_8" BEL
+        "ps2KeyboardInterface/ps2DataShf_7" BEL
+        "ps2KeyboardInterface/ps2DataShf_6" BEL
+        "ps2KeyboardInterface/ps2DataShf_5" BEL
+        "ps2KeyboardInterface/ps2DataShf_4" BEL
+        "ps2KeyboardInterface/ps2DataShf_3" BEL
+        "ps2KeyboardInterface/ps2DataShf_2" BEL
+        "ps2KeyboardInterface/ps2DataShf_1" BEL
+        "ps2KeyboardInterface/ps2DataShf_0" BEL "osc_BUFGP/BUFG.GCLKMUX" BEL
+        "osc_BUFGP/BUFG";
+TSosc = PERIOD TIMEGRP "osc" 20 ns HIGH 50%;
+SCHEMATIC END;
+

@@ -1,0 +1,531 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 5
+-n 3 -fastpaths -xml lab7.twx lab7.ncd -o lab7.twr lab7.pcf -ucf lab7.ucf
+
+Design file:              lab7.ncd
+Physical constraint file: lab7.pcf
+Device,package,speed:     xc3s1000,ft256,-5 (PRODUCTION 1.39 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: TSosc = PERIOD TIMEGRP "osc" 20 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1873 paths analyzed, 277 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   8.470ns.
+--------------------------------------------------------------------------------
+
+Paths for end point screenInterface/charRamHigh.A (RAMB16_X0Y7.DIA3), 50 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     11.530ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ps2KeyboardInterface/data_6 (FF)
+  Destination:          screenInterface/charRamHigh.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      8.426ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.044ns (0.662 - 0.706)
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: ps2KeyboardInterface/data_6 to screenInterface/charRamHigh.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X22Y46.YQ      Tcko                  0.626   ps2KeyboardInterface/data<7>
+                                                       ps2KeyboardInterface/data_6
+    SLICE_X6Y43.G2       net (fanout=55)       2.933   ps2KeyboardInterface/data<6>
+    SLICE_X6Y43.Y        Tilo                  0.529   char<3>103
+                                                       char<3>93
+    SLICE_X6Y43.F3       net (fanout=1)        0.014   char<3>93/O
+    SLICE_X6Y43.X        Tilo                  0.529   char<3>103
+                                                       char<3>103
+    SLICE_X6Y45.G1       net (fanout=1)        0.462   char<3>103
+    SLICE_X6Y45.Y        Tilo                  0.529   screenInterface/dataA<3>
+                                                       char<3>152
+    SLICE_X6Y45.F4       net (fanout=1)        0.315   char<3>152/O
+    SLICE_X6Y45.X        Tilo                  0.529   screenInterface/dataA<3>
+                                                       screenInterface/dataA<3>1
+    RAMB16_X0Y7.DIA3     net (fanout=2)        1.539   screenInterface/dataA<3>
+    RAMB16_X0Y7.CLKA     Tbdck                 0.421   screenInterface/charRamHigh
+                                                       screenInterface/charRamHigh.A
+    -------------------------------------------------  ---------------------------
+    Total                                      8.426ns (3.163ns logic, 5.263ns route)
+                                                       (37.5% logic, 62.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.650ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ps2KeyboardInterface/data_6 (FF)
+  Destination:          screenInterface/charRamHigh.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      8.306ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.044ns (0.662 - 0.706)
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: ps2KeyboardInterface/data_6 to screenInterface/charRamHigh.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X22Y46.YQ      Tcko                  0.626   ps2KeyboardInterface/data<7>
+                                                       ps2KeyboardInterface/data_6
+    SLICE_X14Y43.G4      net (fanout=55)       1.864   ps2KeyboardInterface/data<6>
+    SLICE_X14Y43.Y       Tilo                  0.529   char<2>177
+                                                       char<5>1_SW0
+    SLICE_X15Y44.G2      net (fanout=1)        0.375   N8
+    SLICE_X15Y44.Y       Tilo                  0.479   char<1>64
+                                                       char<5>1
+    SLICE_X14Y45.F2      net (fanout=3)        0.186   N7
+    SLICE_X14Y45.X       Tilo                  0.529   N5
+                                                       char<1>2
+    SLICE_X6Y45.F3       net (fanout=1)        1.229   N5
+    SLICE_X6Y45.X        Tilo                  0.529   screenInterface/dataA<3>
+                                                       screenInterface/dataA<3>1
+    RAMB16_X0Y7.DIA3     net (fanout=2)        1.539   screenInterface/dataA<3>
+    RAMB16_X0Y7.CLKA     Tbdck                 0.421   screenInterface/charRamHigh
+                                                       screenInterface/charRamHigh.A
+    -------------------------------------------------  ---------------------------
+    Total                                      8.306ns (3.113ns logic, 5.193ns route)
+                                                       (37.5% logic, 62.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.683ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ps2KeyboardInterface/data_5 (FF)
+  Destination:          screenInterface/charRamHigh.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      8.282ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.035ns (0.662 - 0.697)
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: ps2KeyboardInterface/data_5 to screenInterface/charRamHigh.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y46.XQ      Tcko                  0.626   ps2KeyboardInterface/data<5>
+                                                       ps2KeyboardInterface/data_5
+    SLICE_X14Y43.G1      net (fanout=37)       1.840   ps2KeyboardInterface/data<5>
+    SLICE_X14Y43.Y       Tilo                  0.529   char<2>177
+                                                       char<5>1_SW0
+    SLICE_X15Y44.G2      net (fanout=1)        0.375   N8
+    SLICE_X15Y44.Y       Tilo                  0.479   char<1>64
+                                                       char<5>1
+    SLICE_X14Y45.F2      net (fanout=3)        0.186   N7
+    SLICE_X14Y45.X       Tilo                  0.529   N5
+                                                       char<1>2
+    SLICE_X6Y45.F3       net (fanout=1)        1.229   N5
+    SLICE_X6Y45.X        Tilo                  0.529   screenInterface/dataA<3>
+                                                       screenInterface/dataA<3>1
+    RAMB16_X0Y7.DIA3     net (fanout=2)        1.539   screenInterface/dataA<3>
+    RAMB16_X0Y7.CLKA     Tbdck                 0.421   screenInterface/charRamHigh
+                                                       screenInterface/charRamHigh.A
+    -------------------------------------------------  ---------------------------
+    Total                                      8.282ns (3.113ns logic, 5.169ns route)
+                                                       (37.6% logic, 62.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point screenInterface/charRamHigh.A (RAMB16_X0Y7.DIA4), 64 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     11.539ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ps2KeyboardInterface/data_3 (FF)
+  Destination:          screenInterface/charRamHigh.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      8.428ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.033ns (0.662 - 0.695)
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: ps2KeyboardInterface/data_3 to screenInterface/charRamHigh.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y47.XQ      Tcko                  0.626   ps2KeyboardInterface/data<3>
+                                                       ps2KeyboardInterface/data_3
+    SLICE_X9Y42.G3       net (fanout=45)       2.333   ps2KeyboardInterface/data<3>
+    SLICE_X9Y42.Y        Tilo                  0.479   char<4>241
+                                                       char<4>233
+    SLICE_X9Y42.F1       net (fanout=1)        0.795   char<4>233/O
+    SLICE_X9Y42.X        Tilo                  0.479   char<4>241
+                                                       char<4>241
+    SLICE_X11Y43.G4      net (fanout=1)        0.315   char<4>241
+    SLICE_X11Y43.Y       Tilo                  0.479   screenInterface/dataA<4>
+                                                       char<4>280_SW0
+    SLICE_X11Y43.F4      net (fanout=1)        0.014   char<4>280_SW0/O
+    SLICE_X11Y43.X       Tilo                  0.479   screenInterface/dataA<4>
+                                                       screenInterface/dataA<4>1
+    RAMB16_X0Y7.DIA4     net (fanout=2)        2.008   screenInterface/dataA<4>
+    RAMB16_X0Y7.CLKA     Tbdck                 0.421   screenInterface/charRamHigh
+                                                       screenInterface/charRamHigh.A
+    -------------------------------------------------  ---------------------------
+    Total                                      8.428ns (2.963ns logic, 5.465ns route)
+                                                       (35.2% logic, 64.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.609ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ps2KeyboardInterface/data_4 (FF)
+  Destination:          screenInterface/charRamHigh.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      8.356ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.035ns (0.662 - 0.697)
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: ps2KeyboardInterface/data_4 to screenInterface/charRamHigh.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y46.YQ      Tcko                  0.626   ps2KeyboardInterface/data<5>
+                                                       ps2KeyboardInterface/data_4
+    SLICE_X8Y45.G2       net (fanout=52)       2.687   ps2KeyboardInterface/data<4>
+    SLICE_X8Y45.Y        Tilo                  0.529   char<1>114
+                                                       char<4>199
+    SLICE_X9Y42.F3       net (fanout=1)        0.319   char<4>199
+    SLICE_X9Y42.X        Tilo                  0.479   char<4>241
+                                                       char<4>241
+    SLICE_X11Y43.G4      net (fanout=1)        0.315   char<4>241
+    SLICE_X11Y43.Y       Tilo                  0.479   screenInterface/dataA<4>
+                                                       char<4>280_SW0
+    SLICE_X11Y43.F4      net (fanout=1)        0.014   char<4>280_SW0/O
+    SLICE_X11Y43.X       Tilo                  0.479   screenInterface/dataA<4>
+                                                       screenInterface/dataA<4>1
+    RAMB16_X0Y7.DIA4     net (fanout=2)        2.008   screenInterface/dataA<4>
+    RAMB16_X0Y7.CLKA     Tbdck                 0.421   screenInterface/charRamHigh
+                                                       screenInterface/charRamHigh.A
+    -------------------------------------------------  ---------------------------
+    Total                                      8.356ns (3.013ns logic, 5.343ns route)
+                                                       (36.1% logic, 63.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.673ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               shiftP_0 (FF)
+  Destination:          screenInterface/charRamHigh.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      8.301ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.026ns (0.662 - 0.688)
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: shiftP_0 to screenInterface/charRamHigh.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y44.YQ      Tcko                  0.626   shiftP<0>
+                                                       shiftP_0
+    SLICE_X8Y42.G4       net (fanout=8)        1.343   shiftP<0>
+    SLICE_X8Y42.Y        Tilo                  0.529   char<4>214
+                                                       char_or00001
+    SLICE_X9Y42.G1       net (fanout=13)       0.334   char_or0000
+    SLICE_X9Y42.Y        Tilo                  0.479   char<4>241
+                                                       char<4>233
+    SLICE_X9Y42.F1       net (fanout=1)        0.795   char<4>233/O
+    SLICE_X9Y42.X        Tilo                  0.479   char<4>241
+                                                       char<4>241
+    SLICE_X11Y43.G4      net (fanout=1)        0.315   char<4>241
+    SLICE_X11Y43.Y       Tilo                  0.479   screenInterface/dataA<4>
+                                                       char<4>280_SW0
+    SLICE_X11Y43.F4      net (fanout=1)        0.014   char<4>280_SW0/O
+    SLICE_X11Y43.X       Tilo                  0.479   screenInterface/dataA<4>
+                                                       screenInterface/dataA<4>1
+    RAMB16_X0Y7.DIA4     net (fanout=2)        2.008   screenInterface/dataA<4>
+    RAMB16_X0Y7.CLKA     Tbdck                 0.421   screenInterface/charRamHigh
+                                                       screenInterface/charRamHigh.A
+    -------------------------------------------------  ---------------------------
+    Total                                      8.301ns (3.492ns logic, 4.809ns route)
+                                                       (42.1% logic, 57.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point screenInterface/charRamHigh.A (RAMB16_X0Y7.DIA2), 68 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     11.597ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ps2KeyboardInterface/data_2 (FF)
+  Destination:          screenInterface/charRamHigh.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      8.370ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.033ns (0.662 - 0.695)
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: ps2KeyboardInterface/data_2 to screenInterface/charRamHigh.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y47.YQ      Tcko                  0.626   ps2KeyboardInterface/data<3>
+                                                       ps2KeyboardInterface/data_2
+    SLICE_X14Y42.F1      net (fanout=40)       3.043   ps2KeyboardInterface/data<2>
+    SLICE_X14Y42.X       Tilo                  0.529   char<2>189
+                                                       char<2>189
+    SLICE_X12Y42.F1      net (fanout=1)        0.825   char<2>189
+    SLICE_X12Y42.X       Tilo                  0.529   char<2>240
+                                                       char<2>240
+    SLICE_X10Y42.F4      net (fanout=1)        0.313   char<2>240
+    SLICE_X10Y42.X       Tilo                  0.529   screenInterface/dataA<2>
+                                                       screenInterface/dataA<2>1
+    RAMB16_X0Y7.DIA2     net (fanout=2)        1.555   screenInterface/dataA<2>
+    RAMB16_X0Y7.CLKA     Tbdck                 0.421   screenInterface/charRamHigh
+                                                       screenInterface/charRamHigh.A
+    -------------------------------------------------  ---------------------------
+    Total                                      8.370ns (2.634ns logic, 5.736ns route)
+                                                       (31.5% logic, 68.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.600ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ps2KeyboardInterface/data_2 (FF)
+  Destination:          screenInterface/charRamHigh.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      8.367ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.033ns (0.662 - 0.695)
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: ps2KeyboardInterface/data_2 to screenInterface/charRamHigh.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y47.YQ      Tcko                  0.626   ps2KeyboardInterface/data<3>
+                                                       ps2KeyboardInterface/data_2
+    SLICE_X8Y43.F2       net (fanout=40)       2.698   ps2KeyboardInterface/data<2>
+    SLICE_X8Y43.X        Tilo                  0.529   char<2>107
+                                                       char<2>107
+    SLICE_X9Y43.F3       net (fanout=1)        0.014   char<2>107
+    SLICE_X9Y43.X        Tilo                  0.479   N53
+                                                       char<2>151_SW0
+    SLICE_X10Y42.G4      net (fanout=1)        0.372   N53
+    SLICE_X10Y42.Y       Tilo                  0.529   screenInterface/dataA<2>
+                                                       char<2>251_SW0
+    SLICE_X10Y42.F3      net (fanout=1)        0.615   char<2>251_SW0/O
+    SLICE_X10Y42.X       Tilo                  0.529   screenInterface/dataA<2>
+                                                       screenInterface/dataA<2>1
+    RAMB16_X0Y7.DIA2     net (fanout=2)        1.555   screenInterface/dataA<2>
+    RAMB16_X0Y7.CLKA     Tbdck                 0.421   screenInterface/charRamHigh
+                                                       screenInterface/charRamHigh.A
+    -------------------------------------------------  ---------------------------
+    Total                                      8.367ns (3.113ns logic, 5.254ns route)
+                                                       (37.2% logic, 62.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.816ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ps2KeyboardInterface/data_2 (FF)
+  Destination:          screenInterface/charRamHigh.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      8.151ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.033ns (0.662 - 0.695)
+  Source Clock:         osc_BUFGP rising at 0.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: ps2KeyboardInterface/data_2 to screenInterface/charRamHigh.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y47.YQ      Tcko                  0.626   ps2KeyboardInterface/data<3>
+                                                       ps2KeyboardInterface/data_2
+    SLICE_X11Y42.G2      net (fanout=40)       2.401   ps2KeyboardInterface/data<2>
+    SLICE_X11Y42.Y       Tilo                  0.479   char<2>88
+                                                       char<2>88_SW0
+    SLICE_X11Y42.F3      net (fanout=1)        0.014   char<2>88_SW0/O
+    SLICE_X11Y42.X       Tilo                  0.479   char<2>88
+                                                       char<2>88
+    SLICE_X10Y42.G1      net (fanout=1)        0.503   char<2>88
+    SLICE_X10Y42.Y       Tilo                  0.529   screenInterface/dataA<2>
+                                                       char<2>251_SW0
+    SLICE_X10Y42.F3      net (fanout=1)        0.615   char<2>251_SW0/O
+    SLICE_X10Y42.X       Tilo                  0.529   screenInterface/dataA<2>
+                                                       screenInterface/dataA<2>1
+    RAMB16_X0Y7.DIA2     net (fanout=2)        1.555   screenInterface/dataA<2>
+    RAMB16_X0Y7.CLKA     Tbdck                 0.421   screenInterface/charRamHigh
+                                                       screenInterface/charRamHigh.A
+    -------------------------------------------------  ---------------------------
+    Total                                      8.151ns (3.063ns logic, 5.088ns route)
+                                                       (37.6% logic, 62.4% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TSosc = PERIOD TIMEGRP "osc" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point resetSyncronizer/aux_1 (SLICE_X49Y94.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.702ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               resetSyncronizer/aux_0 (FF)
+  Destination:          resetSyncronizer/aux_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.702ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 20.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: resetSyncronizer/aux_0 to resetSyncronizer/aux_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X49Y94.YQ      Tcko                  0.501   resetSyncronizer/aux<1>
+                                                       resetSyncronizer/aux_0
+    SLICE_X49Y94.BX      net (fanout=1)        0.447   resetSyncronizer/aux<0>
+    SLICE_X49Y94.CLK     Tckdi       (-Th)     0.246   resetSyncronizer/aux<1>
+                                                       resetSyncronizer/aux_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.702ns (0.255ns logic, 0.447ns route)
+                                                       (36.3% logic, 63.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ps2KeyboardInterface/ps2DataSynchronizer/aux_1 (SLICE_X58Y68.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.709ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ps2KeyboardInterface/ps2DataSynchronizer/aux_0 (FF)
+  Destination:          ps2KeyboardInterface/ps2DataSynchronizer/aux_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.709ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 20.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: ps2KeyboardInterface/ps2DataSynchronizer/aux_0 to ps2KeyboardInterface/ps2DataSynchronizer/aux_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X58Y68.YQ      Tcko                  0.501   ps2KeyboardInterface/ps2DataSynchronizer/aux<1>
+                                                       ps2KeyboardInterface/ps2DataSynchronizer/aux_0
+    SLICE_X58Y68.BX      net (fanout=1)        0.454   ps2KeyboardInterface/ps2DataSynchronizer/aux<0>
+    SLICE_X58Y68.CLK     Tckdi       (-Th)     0.246   ps2KeyboardInterface/ps2DataSynchronizer/aux<1>
+                                                       ps2KeyboardInterface/ps2DataSynchronizer/aux_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.709ns (0.255ns logic, 0.454ns route)
+                                                       (36.0% logic, 64.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ps2KeyboardInterface/ps2ClkSynchronizer/aux_1 (SLICE_X58Y78.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.709ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ps2KeyboardInterface/ps2ClkSynchronizer/aux_0 (FF)
+  Destination:          ps2KeyboardInterface/ps2ClkSynchronizer/aux_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.709ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_BUFGP rising at 20.000ns
+  Destination Clock:    osc_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: ps2KeyboardInterface/ps2ClkSynchronizer/aux_0 to ps2KeyboardInterface/ps2ClkSynchronizer/aux_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X58Y78.YQ      Tcko                  0.501   ps2KeyboardInterface/ps2ClkSynchronizer/aux<1>
+                                                       ps2KeyboardInterface/ps2ClkSynchronizer/aux_0
+    SLICE_X58Y78.BX      net (fanout=1)        0.454   ps2KeyboardInterface/ps2ClkSynchronizer/aux<0>
+    SLICE_X58Y78.CLK     Tckdi       (-Th)     0.246   ps2KeyboardInterface/ps2ClkSynchronizer/aux<1>
+                                                       ps2KeyboardInterface/ps2ClkSynchronizer/aux_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.709ns (0.255ns logic, 0.454ns route)
+                                                       (36.0% logic, 64.0% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TSosc = PERIOD TIMEGRP "osc" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 17.624ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 1.188ns (Tbpwl)
+  Physical resource: screenInterface/bitMapRomHigh/CLKA
+  Logical resource: screenInterface/bitMapRomHigh.A/CLKA
+  Location pin: RAMB16_X0Y9.CLKA
+  Clock network: osc_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.624ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 1.188ns (Tbpwh)
+  Physical resource: screenInterface/bitMapRomHigh/CLKA
+  Logical resource: screenInterface/bitMapRomHigh.A/CLKA
+  Location pin: RAMB16_X0Y9.CLKA
+  Clock network: osc_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.624ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.376ns (420.875MHz) (Tbp)
+  Physical resource: screenInterface/bitMapRomHigh/CLKA
+  Logical resource: screenInterface/bitMapRomHigh.A/CLKA
+  Location pin: RAMB16_X0Y9.CLKA
+  Clock network: osc_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock osc
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+osc            |    8.470|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 1873 paths, 0 nets, and 1007 connections
+
+Design statistics:
+   Minimum period:   8.470ns{1}   (Maximum frequency: 118.064MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Mon May 14 16:19:26 2018 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 201 MB
+
+
+

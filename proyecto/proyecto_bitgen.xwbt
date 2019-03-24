@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\xavi\Desktop\DAS\proyecto\proyecto.ncd
+OUTFILE=C:\Users\xavi\Desktop\DAS\proyecto\proyecto.bit
+FAMILY=Spartan3
+PART=xc3s1000-5ft256
+WORKINGDIR=C:\Users\xavi\Desktop\DAS\proyecto
+LICENSE=WebPack
+USER_INFO=211104958_0_0_850

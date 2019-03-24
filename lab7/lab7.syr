@@ -1,0 +1,884 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: lab7.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "lab7.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "lab7"
+Output Format                      : NGC
+Target Device                      : xc3s1000-5-ft256
+
+---- Source Options
+Top Module Name                    : lab7
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/hlocal/DAS/common/common.vhd" in Library work.
+Architecture common of Entity common is up to date.
+Compiling vhdl file "C:/hlocal/DAS/common/vgaInterface.vhd" in Library work.
+Architecture syn of Entity vgainterface is up to date.
+Compiling vhdl file "C:/hlocal/DAS/common/synchronizer.vhd" in Library work.
+Architecture syn of Entity synchronizer is up to date.
+Compiling vhdl file "C:/hlocal/DAS/common/edgedetector.vhd" in Library work.
+Architecture syn of Entity edgedetector is up to date.
+Compiling vhdl file "C:/hlocal/DAS/common/ps2receiver.vhd" in Library work.
+Architecture syn of Entity ps2receiver is up to date.
+Compiling vhdl file "C:/hlocal/DAS/lab7/vgaTxtInterface.vhd" in Library work.
+Architecture syn of Entity vgatxtinterface is up to date.
+Compiling vhdl file "C:/hlocal/DAS/lab7/lab7.vhd" in Library work.
+Architecture syn of Entity lab7 is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <lab7> in library <work> (architecture <syn>).
+
+Analyzing hierarchy for entity <synchronizer> in library <work> (architecture <syn>) with generics.
+	INIT = '0'
+	STAGES = 2
+
+Analyzing hierarchy for entity <ps2Receiver> in library <work> (architecture <syn>) with generics.
+	REGOUTPUTS = true
+
+Analyzing hierarchy for entity <vgaTxtInterface> in library <work> (architecture <syn>) with generics.
+	FREQ = 50000
+
+Analyzing hierarchy for entity <synchronizer> in library <work> (architecture <syn>) with generics.
+	INIT = '1'
+	STAGES = 2
+
+Analyzing hierarchy for entity <edgeDetector> in library <work> (architecture <syn>).
+
+Analyzing hierarchy for entity <vgaInterface> in library <work> (architecture <syn>) with generics.
+	FREQ = 50000
+	SYNCDELAY = 0
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <lab7> in library <work> (Architecture <syn>).
+Entity <lab7> analyzed. Unit <lab7> generated.
+
+Analyzing generic Entity <synchronizer.1> in library <work> (Architecture <syn>).
+	INIT = '0'
+	STAGES = 2
+Entity <synchronizer.1> analyzed. Unit <synchronizer.1> generated.
+
+Analyzing generic Entity <ps2Receiver> in library <work> (Architecture <syn>).
+	REGOUTPUTS = true
+WARNING:Xst:753 - "C:/hlocal/DAS/common/ps2receiver.vhd" line 57: Unconnected output port 'xRise' of component 'edgeDetector'.
+Entity <ps2Receiver> analyzed. Unit <ps2Receiver> generated.
+
+Analyzing generic Entity <synchronizer.2> in library <work> (Architecture <syn>).
+	INIT = '1'
+	STAGES = 2
+Entity <synchronizer.2> analyzed. Unit <synchronizer.2> generated.
+
+Analyzing Entity <edgeDetector> in library <work> (Architecture <syn>).
+Entity <edgeDetector> analyzed. Unit <edgeDetector> generated.
+
+Analyzing generic Entity <vgaTxtInterface> in library <work> (Architecture <syn>).
+	FREQ = 50000
+    Set user-defined property "INITP_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_08 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_09 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_10 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_11 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_12 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_13 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_14 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_15 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_16 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_17 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_18 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_19 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_20 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_21 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_22 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_23 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_24 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_25 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_26 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_27 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_28 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_29 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_30 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_31 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_32 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_33 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_34 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_35 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_36 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_37 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_38 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_39 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_A =  000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_B =  000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "SIM_COLLISION_CHECK =  ALL" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "SRVAL_A =  000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "SRVAL_B =  000000000" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "WRITE_MODE_A =  WRITE_FIRST" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "WRITE_MODE_B =  WRITE_FIRST" for instance <charRamLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_08 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_09 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_10 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_11 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_12 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_13 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_14 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_15 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_16 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_17 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_18 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_19 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_20 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_21 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_22 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_23 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_24 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_25 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_26 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_27 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_28 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_29 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_30 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_31 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_32 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_33 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_34 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_35 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_36 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_37 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_38 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_39 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_A =  000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_B =  000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "SIM_COLLISION_CHECK =  ALL" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "SRVAL_A =  000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "SRVAL_B =  000000000" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "WRITE_MODE_A =  WRITE_FIRST" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "WRITE_MODE_B =  WRITE_FIRST" for instance <charRamHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT =  000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_00 =  007E4242424242424242424242427E0000000000000000000000000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_01 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_02 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_03 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_04 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_05 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_06 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_07 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_08 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_09 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0A =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0B =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0C =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0D =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0E =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0F =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_10 =  0000000018180018183C3C3C1800000000000000000000000000000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_11 =  0000000036367F3636367F363600000000000000000000000000226363630000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_12 =  00000000C3C60C183063C30000000000000018183E6361603E0343633E181800" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_13 =  00000000000000000000060C0C0C0000000000006E33333B6E1C36361C000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_14 =  0000000018306060606060301800000000000000180C06060606060C18000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_15 =  00000000001818187E18181800000000000000000000361C7F1C360000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_16 =  00000000000000007F000000000000000000000C181818000000000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_17 =  00000000000103060C1830604000000000000000181800000000000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_18 =  000000007E18181818181E1C18000000000000003E6363676F7B73633E000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_19 =  000000003E6360603C6060633E000000000000007F63060C183060633E000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1A =  000000003E6360603F0303037F000000000000007830307F33363C3830000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1B =  000000000C0C0C0C183060637F000000000000003E6363633F0303061C000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1C =  000000001E3060607E6363633E000000000000003E6363633E6363633E000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1D =  000000000C181800000018180000000000000000001818000000181800000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1E =  0000000000007E00007E000000000000000000006030180C060C183060000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1F =  0000000018180018183063633E00000000000000060C18306030180C06000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_20 =  000000006363637F6363361C08000000000000003E033B7B7B7B63633E000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_21 =  000000003C664303030343663C000000000000003F6666663E6666663F000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_22 =  000000007F6646161E1646667F000000000000001F366666666666361F000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_23 =  000000005C66637B030343663C000000000000000F0606161E1646667F000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_24 =  000000003C181818181818183C00000000000000636363637F63636363000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_25 =  00000000676636361E36366667000000000000001E3333303030303078000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_26 =  0000000063636363636B7F7763000000000000007F664606060606060F000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_27 =  000000001C366363636363361C00000000000000636363737B7F6F6763000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_28 =  0000000070303E7B6B6363633E000000000000000F0606063E6666663F000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_29 =  000000003E6363301C0663633E00000000000000676666363E6666663F000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2A =  000000003E6363636363636363000000000000003C1818181818185A7E000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2B =  0000000063777F6B636363636300000000000000081C36636363636363000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2C =  000000003E1C1C1C1C3663636300000000000000636363361C36636363000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2D =  000000003C0C0C0C0C0C0C0C3C000000000000007F6343060C1831637F000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2E =  000000003C303030303030303C00000000000000406070381C0E070301000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2F =  00007F00000000000000000000000000000000000000000000000063361C0800" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_30 =  000000006E33333E301E0000000000000000000000000000000000180C0C0000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_31 =  000000003E630303633E000000000000000000003B666666361E060607000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_32 =  000000003E63037F633E000000000000000000006E333333363C303038000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_33 =  00001E33303E3333336E000000000000000000001E0C0C0C3E0C4C6C38000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_34 =  000000003C181818181C00181800000000000000676666666E36060607000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_35 =  000000006766361E366606060700000000003C66666060606070006060000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_36 =  000000006B6B6B6B7F22000000000000000000003C181818181818181C000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_37 =  000000003E636363633E0000000000000000000066666666663B000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_38 =  00007830303E3333336E00000000000000000F06063E6666663B000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_39 =  000000003E63380E633E000000000000000000000F0606666E3B000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3A =  000000006E333333333300000000000000000000386C0C0C0C3F0C0C08000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3B =  00000000367F6B63636300000000000000000000081C36636363000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3C =  00001E30607E636363630000000000000000000063361C1C3663000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3D =  00000000701818180E18181870000000000000007F660C18337F000000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3E =  000000000E181818701818180E00000000000000181818180018181818000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3F =  007E4242424242424242424242427E0000000000000000000000003B6E000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "SRVAL =  000000000" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "WRITE_MODE =  WRITE_FIRST" for instance <bitMapRomLow> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT =  000000000" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_00 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_01 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_02 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_03 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_04 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_05 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_06 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_07 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_08 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_09 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0A =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0B =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0C =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0D =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0E =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_0F =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_10 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_11 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_12 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_13 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_14 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_15 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_16 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_17 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_18 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_19 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1A =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1B =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1C =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1D =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1E =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_1F =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_20 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_21 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_22 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_23 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_24 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_25 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_26 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_27 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_28 =  0000000066666666663B00003B6E0000007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_29 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2A =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2B =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2C =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2D =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2E =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_2F =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_30 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_31 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_32 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_33 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_34 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_35 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_36 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_37 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_38 =  0000000066666666663B00003B6E0000007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_39 =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3A =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3B =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3C =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3D =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3E =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "INIT_3F =  007E4242424242424242424242427E00007E4242424242424242424242427E00" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "SRVAL =  000000000" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+    Set user-defined property "WRITE_MODE =  WRITE_FIRST" for instance <bitMapRomHigh> in unit <vgaTxtInterface>.
+INFO:Xst:2679 - Register <clearRow> in unit <vgaTxtInterface> has a constant value of 00000 during circuit operation. The register is replaced by logic.
+Entity <vgaTxtInterface> analyzed. Unit <vgaTxtInterface> generated.
+
+Analyzing generic Entity <vgaInterface> in library <work> (Architecture <syn>).
+	FREQ = 50000
+	SYNCDELAY = 0
+WARNING:Xst:819 - "C:/hlocal/DAS/common/vgaInterface.vhd" line 96: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <pixelCnt>, <cycleCntTC>
+Entity <vgaInterface> analyzed. Unit <vgaInterface> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <synchronizer_1>.
+    Related source file is "C:/hlocal/DAS/common/synchronizer.vhd".
+    Found 2-bit register for signal <aux>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <synchronizer_1> synthesized.
+
+
+Synthesizing Unit <synchronizer_2>.
+    Related source file is "C:/hlocal/DAS/common/synchronizer.vhd".
+    Found 2-bit register for signal <aux>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <synchronizer_2> synthesized.
+
+
+Synthesizing Unit <edgeDetector>.
+    Related source file is "C:/hlocal/DAS/common/edgedetector.vhd".
+    Found 1-bit register for signal <aux1>.
+    Found 1-bit register for signal <aux2>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <edgeDetector> synthesized.
+
+
+Synthesizing Unit <vgaInterface>.
+    Related source file is "C:/hlocal/DAS/common/vgaInterface.vhd".
+    Found 1-bit register for signal <vSync>.
+    Found 9-bit register for signal <RGB>.
+    Found 1-bit register for signal <hSync>.
+    Found 10-bit comparator greatequal for signal <blanking$cmp_ge0000> created at line 142.
+    Found 10-bit comparator greatequal for signal <blanking$cmp_ge0001> created at line 142.
+    Found T flip-flop for signal <cycleCnt<0>>.
+    Found 10-bit comparator greatequal for signal <hSyncInt$cmp_ge0000> created at line 139.
+    Found 10-bit comparator less for signal <hSyncInt$cmp_lt0000> created at line 139.
+    Found 10-bit up counter for signal <lineCnt>.
+    Found 10-bit up counter for signal <pixelCnt>.
+    Found 10-bit comparator greatequal for signal <vSyncInt$cmp_ge0000> created at line 140.
+    Found 10-bit comparator less for signal <vSyncInt$cmp_lt0000> created at line 140.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 T-type flip-flop(s).
+	inferred  11 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+Unit <vgaInterface> synthesized.
+
+
+Synthesizing Unit <ps2Receiver>.
+    Related source file is "C:/hlocal/DAS/common/ps2receiver.vhd".
+    Found 1-bit register for signal <dataRdy>.
+    Found 8-bit register for signal <data>.
+    Found 1-bit xor9 for signal <parityOK>.
+    Found 11-bit register for signal <ps2DataShf>.
+    Summary:
+	inferred  20 D-type flip-flop(s).
+	inferred   1 Xor(s).
+Unit <ps2Receiver> synthesized.
+
+
+Synthesizing Unit <vgaTxtInterface>.
+    Related source file is "C:/hlocal/DAS/lab7/vgaTxtInterface.vhd".
+WARNING:Xst:647 - Input <x> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <y> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <line<9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit 8-to-1 multiplexer for signal <bitMapLine$mux0000> created at line 118.
+    Found 3-bit subtractor for signal <bitMapLine$sub0000> created at line 118.
+    Found 7-bit up counter for signal <clearCol>.
+    Found 1-bit register for signal <cleraringRam>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Multiplexer(s).
+Unit <vgaTxtInterface> synthesized.
+
+
+Synthesizing Unit <lab7>.
+    Related source file is "C:/hlocal/DAS/lab7/lab7.vhd".
+    Found 1-bit register for signal <capsOn<0>>.
+    Found 1-bit register for signal <charRdy>.
+    Found 1-bit register for signal <clear>.
+    Found 1-bit register for signal <newLine>.
+    Found 1-bit register for signal <shiftP<0>>.
+    Found 1-bit register for signal <state<0>>.
+    Found 7-bit up counter for signal <x>.
+    Found 5-bit register for signal <y>.
+    Found 5-bit adder for signal <y$addsub0000> created at line 250.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  11 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <lab7> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 3-bit subtractor                                      : 1
+ 5-bit adder                                           : 1
+# Counters                                             : 4
+ 10-bit up counter                                     : 2
+ 7-bit up counter                                      : 2
+# Registers                                            : 22
+ 1-bit register                                        : 18
+ 11-bit register                                       : 1
+ 5-bit register                                        : 1
+ 8-bit register                                        : 1
+ 9-bit register                                        : 1
+# Toggle Registers                                     : 1
+ T flip-flop                                           : 1
+# Comparators                                          : 6
+ 10-bit comparator greatequal                          : 4
+ 10-bit comparator less                                : 2
+# Multiplexers                                         : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+# Xors                                                 : 1
+ 1-bit xor9                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 3-bit subtractor                                      : 1
+ 5-bit adder                                           : 1
+# Counters                                             : 4
+ 10-bit up counter                                     : 2
+ 7-bit up counter                                      : 2
+# Registers                                            : 52
+ Flip-Flops                                            : 52
+# Comparators                                          : 6
+ 10-bit comparator greatequal                          : 4
+ 10-bit comparator less                                : 2
+# Multiplexers                                         : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+# Xors                                                 : 1
+ 1-bit xor9                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <RGB_0> in Unit <vgaInterface> is equivalent to the following 8 FFs/Latches, which will be removed : <RGB_1> <RGB_2> <RGB_3> <RGB_4> <RGB_5> <RGB_6> <RGB_7> <RGB_8> 
+INFO:Xst:1901 - Instance charRamLow in unit charRamLow of type RAMB16_S9_S9 has been replaced by RAMB16
+INFO:Xst:1901 - Instance charRamHigh in unit charRamHigh of type RAMB16_S9_S9 has been replaced by RAMB16
+INFO:Xst:1901 - Instance bitMapRomLow in unit bitMapRomLow of type RAMB16_S9 has been replaced by RAMB16
+INFO:Xst:1901 - Instance bitMapRomHigh in unit bitMapRomHigh of type RAMB16_S9 has been replaced by RAMB16
+
+Optimizing unit <lab7> ...
+
+Optimizing unit <vgaInterface> ...
+
+Optimizing unit <ps2Receiver> ...
+
+Optimizing unit <vgaTxtInterface> ...
+WARNING:Xst:2677 - Node <newLine> of sequential type is unconnected in block <lab7>.
+WARNING:Xst:2677 - Node <y_0> of sequential type is unconnected in block <lab7>.
+WARNING:Xst:2677 - Node <y_1> of sequential type is unconnected in block <lab7>.
+WARNING:Xst:2677 - Node <y_2> of sequential type is unconnected in block <lab7>.
+WARNING:Xst:2677 - Node <y_3> of sequential type is unconnected in block <lab7>.
+WARNING:Xst:2677 - Node <y_4> of sequential type is unconnected in block <lab7>.
+WARNING:Xst:2677 - Node <x_0> of sequential type is unconnected in block <lab7>.
+WARNING:Xst:2677 - Node <x_1> of sequential type is unconnected in block <lab7>.
+WARNING:Xst:2677 - Node <x_2> of sequential type is unconnected in block <lab7>.
+WARNING:Xst:2677 - Node <x_3> of sequential type is unconnected in block <lab7>.
+WARNING:Xst:2677 - Node <x_4> of sequential type is unconnected in block <lab7>.
+WARNING:Xst:2677 - Node <x_5> of sequential type is unconnected in block <lab7>.
+WARNING:Xst:2677 - Node <x_6> of sequential type is unconnected in block <lab7>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block lab7, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 65
+ Flip-Flops                                            : 65
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : lab7.ngr
+Top Level Output File Name         : lab7
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 15
+
+Cell Usage :
+# BELS                             : 309
+#      GND                         : 5
+#      INV                         : 8
+#      LUT1                        : 18
+#      LUT2                        : 48
+#      LUT2_D                      : 2
+#      LUT2_L                      : 3
+#      LUT3                        : 50
+#      LUT3_L                      : 12
+#      LUT4                        : 90
+#      LUT4_D                      : 6
+#      LUT4_L                      : 23
+#      MUXCY                       : 18
+#      MUXF5                       : 5
+#      VCC                         : 1
+#      XORCY                       : 20
+# FlipFlops/Latches                : 65
+#      FDC                         : 8
+#      FDCE                        : 40
+#      FDP                         : 6
+#      FDPE                        : 11
+# RAMS                             : 4
+#      RAMB16                      : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 14
+#      IBUF                        : 3
+#      OBUF                        : 11
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1000ft256-5 
+
+ Number of Slices:                      135  out of   7680     1%  
+ Number of Slice Flip Flops:             65  out of  15360     0%  
+ Number of 4 input LUTs:                260  out of  15360     1%  
+ Number of IOs:                          15
+ Number of bonded IOBs:                  15  out of    173     8%  
+ Number of BRAMs:                         4  out of     24    16%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+osc                                | BUFGP                  | 69    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+--------------------------------------------------------------------------------------------------------------+-----------------------------+-------+
+Control Signal                                                                                                | Buffer(FF name)             | Load  |
+--------------------------------------------------------------------------------------------------------------+-----------------------------+-------+
+ps2KeyboardInterface/ps2ClkEdgeDetector/rst_n_inv(screenInterface/screenInteface/cycleCnt_0_Aclr_inv1_INV_0:O)| NONE(capsOn_0)              | 63    |
+resetSyncronizer/rst_n_inv(resetSyncronizer/rst_n_inv1_INV_0:O)                                               | NONE(resetSyncronizer/aux_0)| 2     |
+--------------------------------------------------------------------------------------------------------------+-----------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 7.822ns (Maximum Frequency: 127.837MHz)
+   Minimum input arrival time before clock: 1.572ns
+   Maximum output required time after clock: 6.490ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'osc'
+  Clock period: 7.822ns (frequency: 127.837MHz)
+  Total number of paths / destination ports: 1781 / 216
+-------------------------------------------------------------------------
+Delay:               7.822ns (Levels of Logic = 5)
+  Source:            ps2KeyboardInterface/data_1 (FF)
+  Destination:       screenInterface/charRamHigh/charRamHigh (RAM)
+  Source Clock:      osc rising
+  Destination Clock: osc rising
+
+  Data Path: ps2KeyboardInterface/data_1 to screenInterface/charRamHigh/charRamHigh
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            37   0.626   1.894  ps2KeyboardInterface/data_1 (ps2KeyboardInterface/data_1)
+     LUT4:I0->O            1   0.479   0.740  char<1>23 (char<1>23)
+     LUT3:I2->O            1   0.479   0.740  char<1>35 (char<1>35)
+     LUT4:I2->O            1   0.479   0.740  char<1>64 (char<1>64)
+     LUT4:I2->O            2   0.479   0.745  screenInterface/dataA<1>1 (screenInterface/dataA<1>)
+     begin scope: 'screenInterface/charRamLow'
+     RAMB16:DIA1               0.421          charRamLow
+    ----------------------------------------
+    Total                      7.822ns (2.963ns logic, 4.859ns route)
+                                       (37.9% logic, 62.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'osc'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              1.572ns (Levels of Logic = 1)
+  Source:            ps2Clk (PAD)
+  Destination:       ps2KeyboardInterface/ps2ClkSynchronizer/aux_0 (FF)
+  Destination Clock: osc rising
+
+  Data Path: ps2Clk to ps2KeyboardInterface/ps2ClkSynchronizer/aux_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.715   0.681  ps2Clk_IBUF (ps2Clk_IBUF)
+     FDP:D                     0.176          ps2KeyboardInterface/ps2ClkSynchronizer/aux_0
+    ----------------------------------------
+    Total                      1.572ns (0.891ns logic, 0.681ns route)
+                                       (56.7% logic, 43.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'osc'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              6.490ns (Levels of Logic = 1)
+  Source:            screenInterface/screenInteface/RGB_0 (FF)
+  Destination:       RGB<8> (PAD)
+  Source Clock:      osc rising
+
+  Data Path: screenInterface/screenInteface/RGB_0 to RGB<8>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              9   0.626   0.955  screenInterface/screenInteface/RGB_0 (screenInterface/screenInteface/RGB_0)
+     OBUF:I->O                 4.909          RGB_8_OBUF (RGB<8>)
+    ----------------------------------------
+    Total                      6.490ns (5.535ns logic, 0.955ns route)
+                                       (85.3% logic, 14.7% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 12.29 secs
+ 
+--> 
+
+Total memory usage is 373200 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   18 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+

@@ -1,0 +1,69 @@
+#####################################################################
+##
+##  Fichero:
+##    lab6.ucf  15/7/2015
+##
+##    (c) J.M. Mendias
+##    Diseño Automático de Sistemas
+##    Facultad de Informática. Universidad Complutense de Madrid
+##
+##  Propósito:
+##    Configuración del laboratorio 6
+##
+##  Notas de diseño:
+##
+#####################################################################
+
+#
+# Reloj del sistema: CLKB a 50 MHz
+#
+NET osc LOC=P8;
+NET osc TNM_NET = osc;
+TIMESPEC TSosc=PERIOD osc 20 ns HIGH 50%;
+
+#
+# Reset del sistema: PB-izq de la XSA-3S Board
+#
+NET rstPb_n LOC=E11;     # PB-izq
+
+#
+# Localización del array de switches de la XStend Board
+#
+
+NET switches_n<3> LOC=K4;     # DIPSW-5
+NET switches_n<2> LOC=K3;     # DIPSW-6
+NET switches_n<1> LOC=K2;     # DIPSW-7
+NET switches_n<0> LOC=J4;     # DIPSW-8
+
+#
+# Localización del display 7-segmentos de la XSA-3S Board
+#
+NET display<7> LOC=N11;     # LED-DP 
+NET display<6> LOC=R10;     # LED-A 
+NET display<5> LOC=P10;     # LED-B 
+NET display<4> LOC=M11;     # LED-C 
+NET display<3> LOC=M6;      # LED-D   
+NET display<2> LOC=N6;      # LED-E 
+NET display<1> LOC=T7;      # LED-F 
+NET display<0> LOC=R7;      # LED-G 
+
+#
+# Localización del conector PS/2 de la XSA-3S Board
+#
+NET ps2Clk  LOC=B16;   # CLK
+NET ps2Data LOC=E13;   # DATA
+
+#
+# Localización del conector VGA de la XSA-3S Board
+#
+NET hSync  LOC=B7;     # HSYNC
+NET vSync  LOC=D8;     # VSYNC
+net RGB<8> LOC=B1;     # RED2
+net RGB<7> LOC=D6;     # RED1
+net RGB<6> LOC=C8;     # RED0
+net RGB<5> LOC=C3;     # GREEN2
+net RGB<4> LOC=A5;     # GREEN1
+net RGB<3> LOC=A8;     # GREEN0
+net RGB<2> LOC=D5;     # BLUE2
+net RGB<1> LOC=E7;     # BLUE1
+net RGB<0> LOC=C9;     # BLUE0

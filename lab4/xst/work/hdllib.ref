@@ -1,0 +1,12 @@
+EN edgedetector NULL C:/hlocal/DAS/common/edgedetector.vhd sub00/vhpl06 1521139057
+PB common common C:/hlocal/DAS/common/common.vhd sub00/vhpl03 1521139054
+EN bin2segs NULL C:/hlocal/DAS/common/bin2segs.vhd sub00/vhpl09 1521139061
+AR ps2receiver syn C:/hlocal/DAS/common/ps2receiver.vhd sub00/vhpl05 1521139060
+EN lab4 NULL C:/hlocal/DAS/lab4/lab4.vhd sub00/vhpl08 1521139063
+AR lab4 syn C:/hlocal/DAS/lab4/lab4.vhd sub00/vhpl11 1521139064
+AR bin2segs syn C:/hlocal/DAS/common/bin2segs.vhd sub00/vhpl10 1521139062
+AR synchronizer syn C:/hlocal/DAS/common/synchronizer.vhd sub00/vhpl01 1521139056
+EN ps2receiver NULL C:/hlocal/DAS/common/ps2receiver.vhd sub00/vhpl04 1521139059
+PH common NULL C:/hlocal/DAS/common/common.vhd sub00/vhpl02 1521139053
+EN synchronizer NULL C:/hlocal/DAS/common/synchronizer.vhd sub00/vhpl00 1521139055
+AR edgedetector syn C:/hlocal/DAS/common/edgedetector.vhd sub00/vhpl07 1521139058

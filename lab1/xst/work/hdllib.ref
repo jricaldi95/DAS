@@ -1,0 +1,6 @@
+PB common common C:/hlocal/DAS/common/common.vhd sub00/vhpl03 1519379805
+EN bin2segs NULL C:/hlocal/DAS/common/bin2segs.vhd sub00/vhpl00 1519379806
+EN lab1 NULL C:/hlocal/DAS/lab1/lab1.vhd sub00/vhpl04 1519379808
+AR bin2segs syn C:/hlocal/DAS/common/bin2segs.vhd sub00/vhpl01 1519379807
+PH common NULL C:/hlocal/DAS/common/common.vhd sub00/vhpl02 1519379804
+AR lab1 syn C:/hlocal/DAS/lab1/lab1.vhd sub00/vhpl05 1519379809

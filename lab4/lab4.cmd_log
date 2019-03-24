@@ -1,0 +1,73 @@
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab4/lab4.xst" -ofn "C:/hlocal/DAS/lab4/lab4.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab4/lab4.xst" -ofn "C:/hlocal/DAS/lab4/lab4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 lab4.ngc lab4.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab4_map.ncd lab4.ngd lab4.pcf 
+par -w -intstyle ise -ol high -t 1 lab4_map.ncd lab4.ncd lab4.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab4.twx lab4.ncd -o lab4.twr lab4.pcf 
+bitgen -intstyle ise -f lab4.ut lab4.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab4.ucf -p xc3s1000-ft256-5 lab4.ngc lab4.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab4_map.ncd lab4.ngd lab4.pcf 
+par -w -intstyle ise -ol high -t 1 lab4_map.ncd lab4.ncd lab4.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab4.twx lab4.ncd -o lab4.twr lab4.pcf -ucf lab4.ucf 
+bitgen -intstyle ise -f lab4.ut lab4.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab4/lab4.xst" -ofn "C:/hlocal/DAS/lab4/lab4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab4.ucf -p xc3s1000-ft256-5 lab4.ngc lab4.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab4_map.ncd lab4.ngd lab4.pcf 
+par -w -intstyle ise -ol high -t 1 lab4_map.ncd lab4.ncd lab4.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab4.twx lab4.ncd -o lab4.twr lab4.pcf -ucf lab4.ucf 
+bitgen -intstyle ise -f lab4.ut lab4.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab4/lab4.xst" -ofn "C:/hlocal/DAS/lab4/lab4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab4.ucf -p xc3s1000-ft256-5 lab4.ngc lab4.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab4_map.ncd lab4.ngd lab4.pcf 
+par -w -intstyle ise -ol high -t 1 lab4_map.ncd lab4.ncd lab4.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab4.twx lab4.ncd -o lab4.twr lab4.pcf -ucf lab4.ucf 
+bitgen -intstyle ise -f lab4.ut lab4.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab4/lab4.xst" -ofn "C:/hlocal/DAS/lab4/lab4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab4.ucf -p xc3s1000-ft256-5 lab4.ngc lab4.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab4_map.ncd lab4.ngd lab4.pcf 
+par -w -intstyle ise -ol high -t 1 lab4_map.ncd lab4.ncd lab4.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab4.twx lab4.ncd -o lab4.twr lab4.pcf -ucf lab4.ucf 
+bitgen -intstyle ise -f lab4.ut lab4.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab4/lab4.xst" -ofn "C:/hlocal/DAS/lab4/lab4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab4.ucf -p xc3s1000-ft256-5 lab4.ngc lab4.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab4_map.ncd lab4.ngd lab4.pcf 
+par -w -intstyle ise -ol high -t 1 lab4_map.ncd lab4.ncd lab4.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab4.twx lab4.ncd -o lab4.twr lab4.pcf -ucf lab4.ucf 
+bitgen -intstyle ise -f lab4.ut lab4.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab4/lab4.xst" -ofn "C:/hlocal/DAS/lab4/lab4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab4.ucf -p xc3s1000-ft256-5 lab4.ngc lab4.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab4_map.ncd lab4.ngd lab4.pcf 
+par -w -intstyle ise -ol high -t 1 lab4_map.ncd lab4.ncd lab4.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab4.twx lab4.ncd -o lab4.twr lab4.pcf -ucf lab4.ucf 
+bitgen -intstyle ise -f lab4.ut lab4.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab4/lab4.xst" -ofn "C:/hlocal/DAS/lab4/lab4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab4.ucf -p xc3s1000-ft256-5 lab4.ngc lab4.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab4_map.ncd lab4.ngd lab4.pcf 
+par -w -intstyle ise -ol high -t 1 lab4_map.ncd lab4.ncd lab4.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab4.twx lab4.ncd -o lab4.twr lab4.pcf -ucf lab4.ucf 
+bitgen -intstyle ise -f lab4.ut lab4.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab4/lab4.xst" -ofn "C:/hlocal/DAS/lab4/lab4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab4.ucf -p xc3s1000-ft256-5 lab4.ngc lab4.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab4_map.ncd lab4.ngd lab4.pcf 
+par -w -intstyle ise -ol high -t 1 lab4_map.ncd lab4.ncd lab4.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab4.twx lab4.ncd -o lab4.twr lab4.pcf -ucf lab4.ucf 
+bitgen -intstyle ise -f lab4.ut lab4.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab4/lab4.xst" -ofn "C:/hlocal/DAS/lab4/lab4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab4.ucf -p xc3s1000-ft256-5 lab4.ngc lab4.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab4_map.ncd lab4.ngd lab4.pcf 
+par -w -intstyle ise -ol high -t 1 lab4_map.ncd lab4.ncd lab4.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab4.twx lab4.ncd -o lab4.twr lab4.pcf -ucf lab4.ucf 
+bitgen -intstyle ise -f lab4.ut lab4.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab4/lab4.xst" -ofn "C:/hlocal/DAS/lab4/lab4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab4.ucf -p xc3s1000-ft256-5 lab4.ngc lab4.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab4_map.ncd lab4.ngd lab4.pcf 
+par -w -intstyle ise -ol high -t 1 lab4_map.ncd lab4.ncd lab4.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab4.twx lab4.ncd -o lab4.twr lab4.pcf -ucf lab4.ucf 
+bitgen -intstyle ise -f lab4.ut lab4.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab4/lab4.xst" -ofn "C:/hlocal/DAS/lab4/lab4.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab4/lab4.xst" -ofn "C:/hlocal/DAS/lab4/lab4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab4.ucf -p xc3s1000-ft256-5 lab4.ngc lab4.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab4_map.ncd lab4.ngd lab4.pcf 
+par -w -intstyle ise -ol high -t 1 lab4_map.ncd lab4.ncd lab4.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab4.twx lab4.ncd -o lab4.twr lab4.pcf -ucf lab4.ucf 
+bitgen -intstyle ise -f lab4.ut lab4.ncd 

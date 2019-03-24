@@ -1,0 +1,19 @@
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/lab2/lab2.xst" -ofn "C:/hlocal/DAS/lab2/lab2.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 lab2.ngc lab2.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o lab2_map.ncd lab2.ngd lab2.pcf 
+par -w -intstyle ise -ol high -t 1 lab2_map.ncd lab2.ncd lab2.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml lab2.twx lab2.ncd -o lab2.twr lab2.pcf 
+bitgen -intstyle ise -f lab2.ut lab2.ncd 

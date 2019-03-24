@@ -1,0 +1,3 @@
+vhdl work "C:\hlocal\DAS\common\common.vhd"
+vhdl work "C:\hlocal\DAS\common\bin2segs.vhd"
+vhdl work "C:\hlocal\DAS\lab1\lab1.vhd"

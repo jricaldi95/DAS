@@ -1,0 +1,5 @@
+set -tmpdir "C:/hlocal/DAS/lab7/xst/projnav.tmp"
+set -xsthdpdir "C:/hlocal/DAS/lab7/xst"
+elaborate
+-ifn vgaTxtInterface.prj
+-ifmt mixed

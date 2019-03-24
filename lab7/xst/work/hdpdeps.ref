@@ -1,0 +1,44 @@
+V3 42
+FL C:/hlocal/DAS/common/common.vhd 2018/05/14.15:58:24 P.20131013
+PH work/common 1526307523 FL C:/hlocal/DAS/common/common.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1335251627 CD bin2segs \
+      CD debouncer CD edgeDetector CD synchronizer CD frequencySynthesizer \
+      CD ps2Receiver CD fifo CD rs232Receiver CD rs232Transmitter CD vgaInterface \
+      CD vgaTxtInterface
+PB work/common 1526307524 \
+      FL C:/hlocal/DAS/common/common.vhd PH work/common 1526307523
+FL C:/hlocal/DAS/common/edgedetector.vhd 2018/02/23.12:15:40 P.20131013
+EN work/edgeDetector 1526307529 FL C:/hlocal/DAS/common/edgedetector.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/edgeDetector/syn 1526307530 \
+      FL C:/hlocal/DAS/common/edgedetector.vhd EN work/edgeDetector 1526307529
+FL C:/hlocal/DAS/common/ps2receiver.vhd 2018/03/13.14:59:06 P.20131013
+EN work/ps2Receiver 1526307531 FL C:/hlocal/DAS/common/ps2receiver.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/ps2Receiver/syn 1526307532 \
+      FL C:/hlocal/DAS/common/ps2receiver.vhd EN work/ps2Receiver 1526307531 \
+      PB work/common 1526307524 CP synchronizer CP edgeDetector CP parityOK \
+      CP lastBit
+FL C:/hlocal/DAS/common/synchronizer.vhd 2018/02/23.12:15:24 P.20131013
+EN work/synchronizer 1526307527 FL C:/hlocal/DAS/common/synchronizer.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/synchronizer/syn 1526307528 \
+      FL C:/hlocal/DAS/common/synchronizer.vhd EN work/synchronizer 1526307527
+FL C:/hlocal/DAS/common/vgaInterface.vhd 2018/04/23.14:36:58 P.20131013
+EN work/vgaInterface 1526307525 FL C:/hlocal/DAS/common/vgaInterface.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/vgaInterface/syn 1526307526 \
+      FL C:/hlocal/DAS/common/vgaInterface.vhd EN work/vgaInterface 1526307525 \
+      PB ieee/NUMERIC_STD 1335251627
+FL C:/hlocal/DAS/lab7/lab7.vhd 2018/05/14.16:16:39 P.20131013
+EN work/lab7 1526307535 FL C:/hlocal/DAS/lab7/lab7.vhd PB ieee/std_logic_1164 1381692176
+AR work/lab7/syn 1526307536 \
+      FL C:/hlocal/DAS/lab7/lab7.vhd EN work/lab7 1526307535 PB ieee/NUMERIC_STD 1335251627 \
+      PB work/common 1526307524 CP synchronizer CP ps2Receiver CP vgaTxtInterface
+FL C:/hlocal/DAS/lab7/vgaTxtInterface.vhd 2018/05/14.15:53:34 P.20131013
+EN work/vgaTxtInterface 1526307533 FL C:/hlocal/DAS/lab7/vgaTxtInterface.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/vgaTxtInterface/syn 1526307534 \
+      FL C:/hlocal/DAS/lab7/vgaTxtInterface.vhd EN work/vgaTxtInterface 1526307533 \
+      LB unisim PB ieee/NUMERIC_STD 1335251627 PH unisim/VCOMPONENTS 1335251629 \
+      PB work/common 1526307524 CP vgaInterface CP RAMB16_S9_S9 CP RAMB16_S9

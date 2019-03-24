@@ -1,0 +1,118 @@
+//! **************************************************************************
+// Written by: Map P.15xf on Mon Apr 16 15:21:59 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "RxD" LOCATE = SITE "G5" LEVEL 1;
+COMP "TxD" LOCATE = SITE "J2" LEVEL 1;
+COMP "osc" LOCATE = SITE "P8" LEVEL 1;
+COMP "rstPb_n" LOCATE = SITE "E11" LEVEL 1;
+COMP "leftSegs<0>" LOCATE = SITE "G16" LEVEL 1;
+COMP "leftSegs<1>" LOCATE = SITE "H13" LEVEL 1;
+COMP "leftSegs<2>" LOCATE = SITE "M15" LEVEL 1;
+COMP "leftSegs<3>" LOCATE = SITE "N3" LEVEL 1;
+COMP "leftSegs<4>" LOCATE = SITE "P1" LEVEL 1;
+COMP "leftSegs<5>" LOCATE = SITE "M4" LEVEL 1;
+COMP "leftSegs<6>" LOCATE = SITE "H14" LEVEL 1;
+COMP "leftSegs<7>" LOCATE = SITE "N15" LEVEL 1;
+COMP "upSegs<0>" LOCATE = SITE "R7" LEVEL 1;
+COMP "upSegs<1>" LOCATE = SITE "T7" LEVEL 1;
+COMP "upSegs<2>" LOCATE = SITE "N6" LEVEL 1;
+COMP "upSegs<3>" LOCATE = SITE "M6" LEVEL 1;
+COMP "upSegs<4>" LOCATE = SITE "M11" LEVEL 1;
+COMP "upSegs<5>" LOCATE = SITE "P10" LEVEL 1;
+COMP "upSegs<6>" LOCATE = SITE "R10" LEVEL 1;
+COMP "upSegs<7>" LOCATE = SITE "N11" LEVEL 1;
+COMP "TxEnable_n" LOCATE = SITE "F15" LEVEL 1;
+COMP "rightSegs<0>" LOCATE = SITE "G1" LEVEL 1;
+COMP "rightSegs<1>" LOCATE = SITE "G3" LEVEL 1;
+COMP "rightSegs<2>" LOCATE = SITE "G4" LEVEL 1;
+COMP "rightSegs<3>" LOCATE = SITE "F2" LEVEL 1;
+COMP "rightSegs<4>" LOCATE = SITE "F3" LEVEL 1;
+COMP "rightSegs<5>" LOCATE = SITE "E1" LEVEL 1;
+COMP "rightSegs<6>" LOCATE = SITE "E2" LEVEL 1;
+COMP "rightSegs<7>" LOCATE = SITE "H4" LEVEL 1;
+NET "osc_BUFGP/IBUFG" BEL "osc_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+TIMEGRP osc = BEL "resetSyncronizer/aux_1" BEL "resetSyncronizer/aux_0" BEL
+        "TxEnableSynchronizer/aux_1" BEL "TxEnableSynchronizer/aux_0" BEL
+        "fifo/isEmpty" BEL "fifo/rdPointer_3" BEL "fifo/rdPointer_2" BEL
+        "fifo/rdPointer_1" BEL "fifo/rdPointer_0" BEL "fifo/wrPointer_3" BEL
+        "fifo/wrPointer_2" BEL "fifo/wrPointer_1" BEL "fifo/wrPointer_0" BEL
+        "fifo/regFile_15_7" BEL "fifo/regFile_15_6" BEL "fifo/regFile_15_5"
+        BEL "fifo/regFile_15_4" BEL "fifo/regFile_15_3" BEL
+        "fifo/regFile_15_2" BEL "fifo/regFile_15_1" BEL "fifo/regFile_15_0"
+        BEL "fifo/isFull" BEL "fifo/regFile_14_7" BEL "fifo/regFile_14_6" BEL
+        "fifo/regFile_14_5" BEL "fifo/regFile_14_4" BEL "fifo/regFile_14_3"
+        BEL "fifo/regFile_14_2" BEL "fifo/regFile_14_1" BEL
+        "fifo/regFile_14_0" BEL "fifo/regFile_12_7" BEL "fifo/regFile_12_6"
+        BEL "fifo/regFile_12_5" BEL "fifo/regFile_12_4" BEL
+        "fifo/regFile_12_3" BEL "fifo/regFile_12_2" BEL "fifo/regFile_12_1"
+        BEL "fifo/regFile_12_0" BEL "fifo/regFile_11_7" BEL
+        "fifo/regFile_11_6" BEL "fifo/regFile_11_5" BEL "fifo/regFile_11_4"
+        BEL "fifo/regFile_11_3" BEL "fifo/regFile_11_2" BEL
+        "fifo/regFile_11_1" BEL "fifo/regFile_11_0" BEL "fifo/regFile_13_7"
+        BEL "fifo/regFile_13_6" BEL "fifo/regFile_13_5" BEL
+        "fifo/regFile_13_4" BEL "fifo/regFile_13_3" BEL "fifo/regFile_13_2"
+        BEL "fifo/regFile_13_1" BEL "fifo/regFile_13_0" BEL
+        "fifo/regFile_10_7" BEL "fifo/regFile_10_6" BEL "fifo/regFile_10_5"
+        BEL "fifo/regFile_10_4" BEL "fifo/regFile_10_3" BEL
+        "fifo/regFile_10_2" BEL "fifo/regFile_10_1" BEL "fifo/regFile_10_0"
+        BEL "fifo/regFile_9_7" BEL "fifo/regFile_9_6" BEL "fifo/regFile_9_5"
+        BEL "fifo/regFile_9_4" BEL "fifo/regFile_9_3" BEL "fifo/regFile_9_2"
+        BEL "fifo/regFile_9_1" BEL "fifo/regFile_9_0" BEL "fifo/regFile_8_7"
+        BEL "fifo/regFile_8_6" BEL "fifo/regFile_8_5" BEL "fifo/regFile_8_4"
+        BEL "fifo/regFile_8_3" BEL "fifo/regFile_8_2" BEL "fifo/regFile_8_1"
+        BEL "fifo/regFile_8_0" BEL "fifo/regFile_7_7" BEL "fifo/regFile_7_6"
+        BEL "fifo/regFile_7_5" BEL "fifo/regFile_7_4" BEL "fifo/regFile_7_3"
+        BEL "fifo/regFile_7_2" BEL "fifo/regFile_7_1" BEL "fifo/regFile_7_0"
+        BEL "fifo/regFile_5_7" BEL "fifo/regFile_5_6" BEL "fifo/regFile_5_5"
+        BEL "fifo/regFile_5_4" BEL "fifo/regFile_5_3" BEL "fifo/regFile_5_2"
+        BEL "fifo/regFile_5_1" BEL "fifo/regFile_5_0" BEL "fifo/regFile_4_7"
+        BEL "fifo/regFile_4_6" BEL "fifo/regFile_4_5" BEL "fifo/regFile_4_4"
+        BEL "fifo/regFile_4_3" BEL "fifo/regFile_4_2" BEL "fifo/regFile_4_1"
+        BEL "fifo/regFile_4_0" BEL "fifo/regFile_6_7" BEL "fifo/regFile_6_6"
+        BEL "fifo/regFile_6_5" BEL "fifo/regFile_6_4" BEL "fifo/regFile_6_3"
+        BEL "fifo/regFile_6_2" BEL "fifo/regFile_6_1" BEL "fifo/regFile_6_0"
+        BEL "fifo/regFile_3_7" BEL "fifo/regFile_3_6" BEL "fifo/regFile_3_5"
+        BEL "fifo/regFile_3_4" BEL "fifo/regFile_3_3" BEL "fifo/regFile_3_2"
+        BEL "fifo/regFile_3_1" BEL "fifo/regFile_3_0" BEL "fifo/regFile_2_7"
+        BEL "fifo/regFile_2_6" BEL "fifo/regFile_2_5" BEL "fifo/regFile_2_4"
+        BEL "fifo/regFile_2_3" BEL "fifo/regFile_2_2" BEL "fifo/regFile_2_1"
+        BEL "fifo/regFile_2_0" BEL "fifo/regFile_1_7" BEL "fifo/regFile_1_6"
+        BEL "fifo/regFile_1_5" BEL "fifo/regFile_1_4" BEL "fifo/regFile_1_3"
+        BEL "fifo/regFile_1_2" BEL "fifo/regFile_1_1" BEL "fifo/regFile_1_0"
+        BEL "fifo/regFile_0_7" BEL "fifo/regFile_0_6" BEL "fifo/regFile_0_5"
+        BEL "fifo/regFile_0_4" BEL "fifo/regFile_0_3" BEL "fifo/regFile_0_2"
+        BEL "fifo/regFile_0_1" BEL "fifo/regFile_0_0" BEL
+        "transmitter/TxDShf_8" BEL "transmitter/TxDShf_7" BEL
+        "transmitter/TxDShf_6" BEL "transmitter/TxDShf_5" BEL
+        "transmitter/TxDShf_4" BEL "transmitter/TxDShf_3" BEL
+        "transmitter/TxDShf_2" BEL "transmitter/TxDShf_1" BEL
+        "transmitter/TxDShf_0" BEL "transmitter/count_15" BEL
+        "transmitter/count_14" BEL "transmitter/count_13" BEL
+        "transmitter/count_12" BEL "transmitter/count_11" BEL
+        "transmitter/count_10" BEL "transmitter/count_9" BEL
+        "transmitter/count_8" BEL "transmitter/count_7" BEL
+        "transmitter/count_6" BEL "transmitter/count_5" BEL
+        "transmitter/count_4" BEL "transmitter/count_3" BEL
+        "transmitter/count_2" BEL "transmitter/count_1" BEL
+        "transmitter/count_0" BEL "transmitter/bitPos_3" BEL
+        "transmitter/bitPos_2" BEL "transmitter/bitPos_1" BEL
+        "transmitter/bitPos_0" BEL "receiver/RxDSynchronizer/aux_0" BEL
+        "receiver/RxDSynchronizer/aux_1" BEL "receiver/RxDShf_7" BEL
+        "receiver/RxDShf_6" BEL "receiver/RxDShf_5" BEL "receiver/RxDShf_4"
+        BEL "receiver/RxDShf_3" BEL "receiver/RxDShf_2" BEL
+        "receiver/RxDShf_1" BEL "receiver/RxDShf_0" BEL "receiver/bitPos_3"
+        BEL "receiver/bitPos_2" BEL "receiver/bitPos_1" BEL
+        "receiver/bitPos_0" BEL "receiver/count_15" BEL "receiver/count_14"
+        BEL "receiver/count_13" BEL "receiver/count_12" BEL
+        "receiver/count_11" BEL "receiver/count_10" BEL "receiver/count_9" BEL
+        "receiver/count_8" BEL "receiver/count_7" BEL "receiver/count_6" BEL
+        "receiver/count_5" BEL "receiver/count_4" BEL "receiver/count_3" BEL
+        "receiver/count_2" BEL "receiver/count_1" BEL "receiver/count_0" BEL
+        "fifo/rdPointer_0_1" BEL "fifo/rdPointer_1_1" BEL "fifo/rdPointer_2_1"
+        BEL "fifo/wrPointer_3_1" BEL "fifo/wrPointer_2_1" BEL
+        "osc_BUFGP/BUFG.GCLKMUX" BEL "osc_BUFGP/BUFG";
+TSosc = PERIOD TIMEGRP "osc" 20 ns HIGH 50%;
+SCHEMATIC END;
+
