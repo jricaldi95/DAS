@@ -4,13 +4,13 @@
 --    lab1.vhd  14/7/2015
 --
 --    (c) J.M. Mendias
---    Diseño Automático de Sistemas
---    Facultad de Informática. Universidad Complutense de Madrid
+--    Diseï¿½o Automï¿½tico de Sistemas
+--    Facultad de Informï¿½tica. Universidad Complutense de Madrid
 --
---  Propósito:
+--  Propï¿½sito:
 --    Laboratorio 1
 --
---  Notas de diseño:
+--  Notas de diseï¿½o:
 --
 ---------------------------------------------------------------------
 
@@ -43,15 +43,15 @@ architecture syn of lab1 is
   
 begin
 
-  opCode  <= not ("00" & pbs_n);
-  leftOp  <= not(signed("0000" & switches_n(7 downto 4)));
-  rightOp <= not (signed("0000" & switches_n(3 downto 0)));
+  opCode  <= ("00" & pbs_n);
+  leftOp  <= (signed("0000" & switches_n(7 downto 4)));
+  rightOp <= (signed("0000" & switches_n(3 downto 0)));
 
   ALU:
   with opCode select result <=  
   (leftOp) + (rightOp) when "0000",
   (leftOp) - (rightOp) when "0001",
-  -(rightOp) 			  when "0010",
+  -(rightOp(3 downto 0)) when "0010",
   (leftOp) * (rightOp) when others;
 
 

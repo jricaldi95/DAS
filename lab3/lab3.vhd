@@ -4,13 +4,13 @@
 --    lab3.vhd  15/7/2015
 --
 --    (c) J.M. Mendias
---    Diseño Automático de Sistemas
---    Facultad de Informática. Universidad Complutense de Madrid
+--    Diseï¿½o Automï¿½tico de Sistemas
+--    Facultad de Informï¿½tica. Universidad Complutense de Madrid
 --
---  Propósito:
+--  Propï¿½sito:
 --    Laboratorio 3
 --
---  Notas de diseño:
+--  Notas de diseï¿½o:
 --
 ---------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ use work.common.all;
 
 architecture syn of lab3 is
 
-  signal clk, rst_n : std_logic; --señales de reloj y reset
+  signal clk, rst_n : std_logic; --seÃ±ales de reloj y reset
   signal ready, rstInit_n : std_logic;
   
   signal enterSync_n, enterDeb_n, enterFall : std_logic;
@@ -95,20 +95,20 @@ begin
       when initial =>
         tries <= "1010";
         lock  <= '0';
-		when S3 =>
-			lock <= '1';
-			tries <= "0011";
-		when S2 =>
-			lock <= '1';
-			tries <= "0010";
-		when S1 =>
-			lock <= '1';
-			tries <= "0001";
-		when S0 =>
-			lock <= '1';
-			tries <= "1100";
+      when S3 =>
+        lock <= '1';
+        tries <= "0011";
+      when S2 =>
+        lock <= '1';
+        tries <= "0010";
+      when S1 =>
+        lock <= '1';
+        tries <= "0001";
+      when S0 =>
+        lock <= '1';
+        tries <= "1100";
     end case;
-	 ----- arriba logia de estados y abajo la secuencial
+	 ----- arriba logica de estados y abajo la secuencial
     if rst_n='0' then
       state := initial;
     elsif rising_edge(clk) then

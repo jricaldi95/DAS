@@ -4,13 +4,13 @@
 --    lab2.vhd  14/7/2015
 --
 --    (c) J.M. Mendias
---    Diseño Automático de Sistemas
---    Facultad de Informática. Universidad Complutense de Madrid
+--    Diseï¿½o Automï¿½tico de Sistemas
+--    Facultad de Informï¿½tica. Universidad Complutense de Madrid
 --
---  Propósito:
+--  Propï¿½sito:
 --    Laboratorio 2
 --
---  Notas de diseño:
+--  Notas de diseï¿½o:
 --
 ---------------------------------------------------------------------
 library ieee;
@@ -43,7 +43,7 @@ architecture syn of lab2 is
   );
   port
   (
-    rst_n : in  std_logic;   -- reset asíncrono del sistema (a baja)
+    rst_n : in  std_logic;   -- reset asï¿½ncrono del sistema (a baja)
     clk   : in  std_logic;   -- reloj del sistema
     clear : in  std_logic;   -- puesta a 0 sincrona
     ce    : in  std_logic;   -- capacitacion de cuenta
@@ -83,11 +83,11 @@ begin
   
 	startStopSynchronizer : synchronizer
 	 generic map ( STAGES => 2, INIT => '1' )
-	 port map ( rst_n => rst_n, clk => clk , x => startStop_n, xSync =>startStopSync_n ); --Faltan 2 campos 
+	 port map ( rst_n => rst_n, clk => clk , x => startStop_n, xSync =>startStopSync_n );
 
 	startStopDebouncer : debouncer
 	 generic map ( FREQ => 50_000, BOUNCE => 50 )
-	 port map ( rst_n => rst_n, clk => clk , x_n => startStopSync_n , xdeb_n => startStopDeb_n ); --Aqui tambien faltan dos campos
+	 port map ( rst_n => rst_n, clk => clk , x_n => startStopSync_n , xdeb_n => startStopDeb_n ); 
 	 
 	startStopEdgeDetector : edgeDetector
 	 port map ( rst_n => rst_n, clk => clk , x_n => startStopDeb_n ,xFall => startStopFall ,xRise => open );
@@ -96,7 +96,7 @@ begin
 	-- o ha de ser logica inversa de manera que se ejecute cuando clear 0 y starstop 1
 
 	clearSynchronizer : synchronizer  
-	 generic map ( STAGES => 2, INIT => '1')--¿El valor de inir es correcto?
+	 generic map ( STAGES => 2, INIT => '1')
 	 port map ( rst_n => rst_n, clk => clk , x => clear_n, xSync => clearSync_n );
 
 	clearDebouncer : debouncer
@@ -108,7 +108,7 @@ begin
 	 
 
 	lapSynchronizer : synchronizer
-	 generic map (STAGES => 2, INIT => '1' ) --¿ el valor de init es correcto?
+	 generic map (STAGES => 2, INIT => '1' ) 
 	 port map ( rst_n => rst_n, clk => clk , x => lap_n , xSync =>lapSync_n );
 
 	lapDebouncer : debouncer
