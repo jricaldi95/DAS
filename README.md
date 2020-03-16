@@ -20,7 +20,7 @@ These instruction will get you a copy of the project up and running on your loca
   ```
 
 ### Prerequisites
-All this files have been synthesized with [Xilinx - ISE Design Suite](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools.html) and dumped into FPGA Xilinx Spartan 3 [Datasheet](https://www.xilinx.com/support/documentation/data_sheets/ds099.pdf).
+All this files have been synthesized with [Xilinx - ISE Design Suite](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive-ise.html) and dumped into FPGA Xilinx Spartan 3 [Datasheet](https://www.xilinx.com/support/documentation/data_sheets/ds099.pdf).
 
 ## Authors
 
